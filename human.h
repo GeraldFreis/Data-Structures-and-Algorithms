@@ -5,7 +5,7 @@
 /*
 Human subclass of Player superclass, handles choosing the players move
 */
-class Human: protected Player {
+class Human: public Player {
     public:
         void choose_move();
 };
