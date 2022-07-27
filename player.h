@@ -19,6 +19,7 @@ class Player {
         virtual void choose_move() = 0;
 
         std::vector<char> get_past_moves();
+        virtual ~Player(){}
 
 };
 #endif

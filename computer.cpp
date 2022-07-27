@@ -6,7 +6,7 @@ preconditions = Computer object instantiated
 postconditions = changes current_move in object
 */
 void Computer::choose_move(){
-    srand(time (NULL));
+    // srand(time (NULL));
 
     char moves[3] = {'s', 'p', 'r'};
     int randint = rand() % 3;
