@@ -5,7 +5,7 @@ Checking who won the game
 preconditions = Human and Computer objects as parameters -> requires moves to be chosen for both objects
 postconditions = winner is changed, must be retrieved via the get_winner function
 */
-void Referee::check_winner(Human *h, Computer *c){
+void Referee::check_winner(Player *h, Player *c){
     char human_move = h->get_move(); char computer_move = c->get_move();
 
     // checking who won using the common rules of rock, paper, scissors

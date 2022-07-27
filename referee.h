@@ -1,6 +1,7 @@
 #include <iostream>
-#include "human.h"
-#include "computer.h"
+#include "player.h"
+// #include "human.h"
+// #include "computer.h"
 
 
 #ifndef REFEREE_H
@@ -16,7 +17,7 @@ class Referee {
     
     public:
         Referee(){winner = " ";}
-        void check_winner(Human *h, Computer *c);
+        void check_winner(Player *h, Player *c);
         std::string get_winner();
 };
 
