@@ -16,7 +16,6 @@ void GameManager::main_loop(){
 
         ref.check_winner(user, computer);
         std::cout << "\n" << "you played: " << user->get_move() << " The computer played: " << computer->get_move() << "\n";
-
         if(ref.get_winner() != "draw"){
             std::cout << "The winner is: "<<ref.get_winner() << "\n";
 
