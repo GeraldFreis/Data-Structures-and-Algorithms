@@ -1,13 +1,13 @@
 #include "FistfullODollars.h"
 
-FistFullODollars::FistFullODollars(){
+FistfullODollars::FistfullODollars(){
     this->current_move = 'R';
     firsttime = true;
     paper_counter = 0;
 }
 
 // FistfullODollars always plays in Rock, Paper, Paper order
-char FistFullODollars::make_move(){
+char FistfullODollars::make_move(){
     if(this->current_move == 'R' && firsttime != true){
         this->current_move = 'P';
         return 'P';

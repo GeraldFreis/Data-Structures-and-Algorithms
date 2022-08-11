@@ -7,8 +7,6 @@
 
 
 class Tournament {
-    private:
-        
     public:
         Player *run(std::array<Player *, 8> competitors);
 };  

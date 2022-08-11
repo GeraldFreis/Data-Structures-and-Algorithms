@@ -4,13 +4,13 @@
 #include <iostream>
 #include "Computer.h"
 
-class FistFullODollars: public Computer {
+class FistfullODollars: public Computer {
     private:
         bool firsttime;
         int paper_counter;
     
     public:
-        FistFullODollars();
+        FistfullODollars();
         char make_move();
 };
 
