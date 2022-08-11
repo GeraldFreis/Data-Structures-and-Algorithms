@@ -3,15 +3,16 @@
 
 #include <iostream>
 #include <vector>
+#include "Player.h"
 
 
 /*
 Human class representing a human
 
 */
-class Human {
-    private:
-        char current_move;
+class Human: public Player {
+    // private:
+    //     char current_move;
     
     public:
         Human();
