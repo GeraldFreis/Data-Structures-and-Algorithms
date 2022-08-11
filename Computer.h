@@ -2,13 +2,13 @@
 #define COMPUTER_H
 
 class Computer {
-    private:
+    protected:
         char current_move;
     
     public:
         Computer();
 
-        char make_move();
+        virtual char make_move();
 };
 
 #endif
