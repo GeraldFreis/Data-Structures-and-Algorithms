@@ -10,7 +10,7 @@
 
 class Tournament {
     private:
-        std::vector<Player> winners;
+        std::vector<Player *> winners;
     public:
         Player *run(std::array<Player *, 8> competitors);
 };  
