@@ -9,6 +9,12 @@ FistfullODollars::FistfullODollars(){
 
 // FistfullODollars always plays in Rock, Paper, Paper order
 char FistfullODollars::make_move(){
+    if(this->current_move == 'R' && firsttime == true){
+        firsttime = false;
+        this->current_move = 'P';
+        return 'R';
+    }
+    
     if(this->current_move == 'R' && firsttime != true){
         this->current_move = 'P';
         return 'P';
@@ -29,12 +35,6 @@ char FistfullODollars::make_move(){
     else {
         std::cout << "code malfunctioned in FistFullODollars line 22" << "\n";
         return 'M';
-    }
-    
-    if(this->current_move == 'R' && firsttime == true){
-        firsttime = false;
-        this->current_move = 'P';
-        return 'R';
     }
 }
 
