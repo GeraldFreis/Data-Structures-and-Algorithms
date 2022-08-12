@@ -36,3 +36,9 @@ char PaperDoll::make_move(){
         return 'P';
     }
 }
+
+void PaperDoll::reset(){
+    this->current_move = 'P';
+    firsttime = true;
+    scissors_count = 0;
+}

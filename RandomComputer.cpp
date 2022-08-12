@@ -7,3 +7,7 @@ char RandomComputer::make_move() {
     this->current_move = outcomes[randIndex];
     return outcomes[randIndex];
 }
+
+void RandomComputer::reset(){
+    this->current_move = 'R';
+}

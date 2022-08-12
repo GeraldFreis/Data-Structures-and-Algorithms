@@ -12,6 +12,7 @@ class PaperDoll: public Computer {
         PaperDoll();
 
         char make_move();
+        void reset();
 };
 
 #endif

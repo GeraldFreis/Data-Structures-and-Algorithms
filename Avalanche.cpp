@@ -5,3 +5,7 @@ char Avalanche::make_move(){
     this->current_move = 'R';
     return 'R';
 }
+
+void Avalanche::reset(){
+    this->current_move = 'R';
+}

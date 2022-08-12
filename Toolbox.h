@@ -7,6 +7,7 @@
 class Toolbox: public Computer {
     public:
         char make_move();
+        void reset();
 };
 
 #endif 

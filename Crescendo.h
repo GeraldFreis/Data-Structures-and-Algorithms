@@ -10,6 +10,7 @@ class Crescendo: public Computer {
     public:
         Crescendo();
         char make_move();
+        void reset();
 };
 
 #endif

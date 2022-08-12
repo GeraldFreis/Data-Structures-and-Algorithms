@@ -12,6 +12,7 @@ class FistfullODollars: public Computer {
     public:
         FistfullODollars();
         char make_move();
+        void reset();
 };
 
 #endif

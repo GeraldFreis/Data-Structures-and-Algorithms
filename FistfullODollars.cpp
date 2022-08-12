@@ -36,3 +36,5 @@ char FistfullODollars::make_move(){
         return 'R';
     }
 }
+
+void FistfullODollars::reset(){this->current_move = 'R'; firsttime = true; paper_counter = 0;}

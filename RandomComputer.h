@@ -5,7 +5,8 @@
 
 class RandomComputer: public Computer {
     public:
-        char make_move();        
+        char make_move();    
+        void reset();    
 };
 
 #endif

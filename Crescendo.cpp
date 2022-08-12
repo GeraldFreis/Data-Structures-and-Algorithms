@@ -31,3 +31,6 @@ char Crescendo::make_move(){
         return 'P';
     }
 }
+
+// resetting the Crescendo's move
+void Crescendo::reset(){this->current_move = 'P'; firstmove = true;}

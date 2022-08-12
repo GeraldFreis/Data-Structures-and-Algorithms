@@ -6,6 +6,7 @@
 class Avalanche : public Computer {
     public:
         char make_move();
+        void reset();
 };
 
 #endif
