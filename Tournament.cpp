@@ -71,6 +71,7 @@ Player *Tournament::run(std::array<Player *, 8> competitors){
 
     finals.at(0)->reset(); finals.at(1)->reset();
     int counter_1 = 0; int counter_2 = 1;
+
     for(int i = 0; i < 5; i++){ 
         char winner = Ref.refGame(finals.at(0), finals.at(1));
 
@@ -79,6 +80,6 @@ Player *Tournament::run(std::array<Player *, 8> competitors){
         else{counter_1++;}
     }
 
-    if(counter_1 > counter_2){return finals.at(0);}
-    else{return finals.at(1);}    
+    if(counter_1 > counter_2){return finals.at(1);}
+    else{return finals.at(0);}    
 }
