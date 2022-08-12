@@ -51,7 +51,7 @@ Player *Tournament::run(std::array<Player *, 8> competitors){
     std::vector<Player*> finals;
 
     for(int i = 0; i < winners.size()-1; i += 2){
-        winners->at(i)->reset(); winners.at(i+1)->reset();
+        winners.at(i)->reset(); winners.at(i+1)->reset();
         int counter_1 = 0; int counter_2 = 0;
 
         for(int i = 0; i < 5; i++){

@@ -18,6 +18,7 @@ class Human: public Player {
         Human();
 
         char make_move();
+        void reset(){std::cout << "win" << "\n";}
 
 };
 

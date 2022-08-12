@@ -9,6 +9,7 @@ class Player {
     public:
         Player();
         virtual char make_move() = 0;
+        virtual void reset() = 0;
 };
 
 #endif

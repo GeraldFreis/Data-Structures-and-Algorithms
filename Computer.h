@@ -11,7 +11,6 @@ class Computer: public Player {
         Computer();
 
         virtual char make_move();
-        virtual void reset() = 0;
 };
 
 #endif
