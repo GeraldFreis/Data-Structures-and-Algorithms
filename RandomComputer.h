@@ -5,6 +5,7 @@
 
 class RandomComputer: public Computer {
     public:
+        RandomComputer(){this->name = "RandomComputer";}
         char make_move();    
         void reset();    
 };

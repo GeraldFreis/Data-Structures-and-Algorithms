@@ -1,6 +1,7 @@
 #include "PaperDoll.h"
 
 PaperDoll::PaperDoll(){
+    this->name = "PaperDoll";
     this->current_move = 'P';
     firsttime = true;
     scissors_count = 0;

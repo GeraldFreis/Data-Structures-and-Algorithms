@@ -6,6 +6,7 @@
 
 class Toolbox: public Computer {
     public:
+        Toolbox(){this->name = "Toolbox";}
         char make_move();
         void reset();
 };

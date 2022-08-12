@@ -6,7 +6,9 @@
 
 
 class Bureaucrat : public Computer {
+
     public:
+        Bureaucrat(){this->name = "Bureaucrat";}
         char make_move();
         void reset();
 };

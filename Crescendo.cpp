@@ -2,6 +2,7 @@
 
 
 Crescendo::Crescendo(){
+    this->name = "Crescendo";
     this->current_move = 'P';
     firstmove = true;
 }

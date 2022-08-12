@@ -1,6 +1,7 @@
 #include "FistfullODollars.h"
 
 FistfullODollars::FistfullODollars(){
+    this->name = "fistfullOdollars";
     this->current_move = 'R';
     firsttime = true;
     paper_counter = 0;
