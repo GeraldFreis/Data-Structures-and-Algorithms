@@ -11,13 +11,13 @@
 int main () {
     std::array<Player*, 8> players;
     players[0] = new Avalanche;
-    players[1] = new Bureaucrat;
-    players[2] = new Bureaucrat;
-    players[3] = new Toolbox;
-    players[4] = new Toolbox;
-    players[5] = new Crescendo;
-    players[6] = new Crescendo;
-    players[7] = new FistfullODollars;
+    players[1] = new Avalanche;
+    players[2] = new Avalanche;
+    players[3] = new Avalanche;
+    players[4] = new Avalanche;
+    players[5] = new Bureaucrat;
+    players[6] = new Avalanche;
+    players[7] = new Avalanche;
 
     Tournament tourny;
     Player *winner = tourny.run(players);

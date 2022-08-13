@@ -22,6 +22,21 @@ char Referee::refGame(Player *player1, Player *player2){
     else if(playermove == 'P' && computermove == 'R'){
         return 'W';
     }
+    else if(playermove == 'P' && computermove == 'S'){
+        return 'L';
+    }
+    else if(playermove == 'S' && computermove == 'P'){
+        return 'W';
+    }
+    else if(playermove == 'P' && computermove == 'P'){
+        return 'T';
+    }
+    else if(playermove == 'S' && computermove == 'S'){
+        return 'T';
+    }
+    else if(playermove == 'R' && computermove == 'R'){
+        return 'T';
+    }
     else {
         return 'A';
     }
