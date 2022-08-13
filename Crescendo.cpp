@@ -11,7 +11,7 @@ Crescendo::Crescendo(){
 char Crescendo::make_move(){
     if(this->current_move == 'P' && firstmove == true){
         firstmove = false;
-        this->current_move = 'S';
+        // this->current_move = 'S';
         return 'P';
     }
     

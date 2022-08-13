@@ -9,6 +9,7 @@ class Avalanche : public Computer {
         Avalanche(){this->name = "Avalanche";}
         char make_move();
         void reset();
+        void printname(){std::cout << "Avalanche" << "\n";}
 };
 
 #endif

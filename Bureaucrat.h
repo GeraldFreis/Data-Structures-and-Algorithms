@@ -11,6 +11,8 @@ class Bureaucrat : public Computer {
         Bureaucrat(){this->name = "Bureaucrat";}
         char make_move();
         void reset();
+        // void printname(){std::cout << "Bureaucrat" << "\n";}
+
 };
 
 #endif

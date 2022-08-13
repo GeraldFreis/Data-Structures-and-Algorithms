@@ -11,7 +11,7 @@ FistfullODollars::FistfullODollars(){
 char FistfullODollars::make_move(){
     if(this->current_move == 'R' && firsttime == true){
         firsttime = false;
-        this->current_move = 'P';
+        // this->current_move = 'P';
         return 'R';
     }
     

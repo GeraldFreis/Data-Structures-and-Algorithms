@@ -49,6 +49,7 @@ Player *Tournament::run(std::array<Player *, 8> competitors){
     if(winners.size() > 4){std::cout<<"Too many winners in tournament" << "\n";}
 
     std::vector<Player* > finals;
+    
 
     for(int i = 0; i <= 2; i = i + 2){
         winners.at(i)->reset(); winners.at(i+1)->reset();
@@ -74,6 +75,7 @@ Player *Tournament::run(std::array<Player *, 8> competitors){
 
     for(int i = 0; i < 5; i++){ 
         char winner = Ref.refGame(finals.at(0), finals.at(1));
+        // finals.at(0)->printname(); finals.at(1)->printname();
 
         if(winner == 'W'){counter_1++;}
         else if(winner == 'L'){counter_2++;}

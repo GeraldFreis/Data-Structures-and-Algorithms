@@ -9,4 +9,4 @@ char Computer::make_move(){
     return 'R';
 }
 
-void Computer::printname(){std::cout << this->name << "\n";}
+// void Computer::printname(){std::cout << this->name << "\n";}
