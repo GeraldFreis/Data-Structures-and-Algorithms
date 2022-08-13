@@ -63,7 +63,7 @@ Player *Tournament::run(std::array<Player *, 8> competitors){
             if(thiswinner == 'L'){counter_2++;}
             else if(thiswinner == 'W'){counter_1++;}
             else if(thiswinner == 'T'){counter_1++;}
-            else{counter_2++;}
+            // else{counter_1++;}
         }
 
         if(counter_1 > counter_2){finals.push_back(winners.at(i));}
@@ -85,6 +85,6 @@ Player *Tournament::run(std::array<Player *, 8> competitors){
         else{counter_1++;}
     }
 
-    if(counter_1 > counter_2){return finals.at(1);}
-    else{return finals.at(0);}    
+    if(counter_1 > counter_2){return finals.at(0);}
+    else{return finals.at(1);}    
 }
