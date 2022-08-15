@@ -87,5 +87,6 @@ Player *Tournament::run(std::array<Player *, 8> competitors){
     }
 
     if(counter_1 > counter_2){return finals.at(0);}
-    else{return finals.at(1);}    
+    else{return finals.at(1);
+    }    
 }
