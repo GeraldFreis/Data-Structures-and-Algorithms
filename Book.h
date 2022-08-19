@@ -4,6 +4,8 @@
 
 class Book: public Document {
     public:
+        Book();
+        Book(int given_id);
         int getDocumentID();
 };
 #endif
