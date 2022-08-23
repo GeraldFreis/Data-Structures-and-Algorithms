@@ -3,6 +3,8 @@
 
 int Reverse::reverseDigit(int int_to_reverse){
     #include <string>
+    if(int_to_reverse < 0){return -1;}
+
     std::string converted_string =  std::to_string(int_to_reverse);
     // return std::stoi(converted_string);
     index = converted_string.length()-1;
@@ -13,6 +15,7 @@ int Reverse::reverseDigit(int int_to_reverse){
             int_to_reverse = reverseDigit(std::stoi(converted_string));
     } else if(index == 0){reversed_stuffs += converted_string[index]; return std::stoi(reversed_stuffs);}
     return std::stoi(reversed_stuffs);
+    
 };  
 
 Reverse::Reverse(){
@@ -21,10 +24,15 @@ Reverse::Reverse(){
 }
 
 std::string Reverse::reverseString(std::string reverse_string){
-    if(reverse_string.length() > 0){
-        reversed_stuffs += reverse_string[reverse_string.length()-1];
-        reverse_string.erase(reverse_string.length()-1);
-        reverse_string = reverseString(reverse_string);
+    if(reverse_string.empty() == false){
+        if(reverse_string.length() > 0){
+            reversed_stuffs += reverse_string[reverse_string.length()-1];
+            reverse_string.erase(reverse_string.length()-1);
+            reverse_string = reverseString(reverse_string);
+        }
+        return reversed_stuffs;
     }
-    return reversed_stuffs;
+    else{
+        return "ERROR";
+    }
 };
