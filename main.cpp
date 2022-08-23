@@ -3,5 +3,9 @@
 
 int main(){
     Reverse rev;
-    std::cout << rev.reverseDigit(1234) << "\n";
+    std::cout << rev.reverseString("midget") << "\n";
+    Reverse newrev;
+    std::cout << newrev.reverseDigit(12345) << "\n";
+
+    
 }
