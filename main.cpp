@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Reverse.h"
 #include "Truckloads.h"
+#include "EfficientTruckloads.h"
 
 int main(){
     Reverse rev;
@@ -10,4 +11,7 @@ int main(){
 
     Truckloads truck1;
     std::cout << truck1.numTrucks(14, 3) << "\n";
+
+    EfficientTruckloads eff;
+    std::cout << eff.numTrucks(14, 3) << "\n";
 }
