@@ -4,9 +4,13 @@
 
 // Reversing recursively class
 class Reverse {
+    private:
+        int index;
+        std::string reversed_stuffs;
     public:
+        Reverse();
         std::string reverseString(std::string reversable_string);
-        int reverseInt(int reverse_int);
+        int reverseDigit(int reverse_int);
 };
 
 #endif
