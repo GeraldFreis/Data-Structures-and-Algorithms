@@ -1,5 +1,8 @@
 #ifndef TRUCKLOADS_H
 #define TRUCKLOADS_H
+#include <cmath>
+#include <iostream>
+
 
 class Truckloads {
     public:

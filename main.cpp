@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Reverse.h"
+#include "Truckloads.h"
 
 int main(){
     Reverse rev;
@@ -7,5 +8,6 @@ int main(){
     Reverse newrev;
     std::cout << newrev.reverseDigit(12345) << "\n";
 
-    
+    Truckloads truck1;
+    std::cout << truck1.numTrucks(14, 3) << "\n";
 }
