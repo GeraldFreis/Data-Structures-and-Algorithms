@@ -22,7 +22,7 @@ int EfficientTruckloads::numTrucks(int numCrates, int loadSize){
             thistotal += cratePairs.at(num1);
         } else {
             int thisval = numTrucks(num1, loadSize);
-            cratePairs.insert(num1, thisval);
+            cratePairs.insert(std::pair<int, int>(num1, thisval));
             thistotal += thisval;
         }
 
@@ -30,7 +30,7 @@ int EfficientTruckloads::numTrucks(int numCrates, int loadSize){
             thistotal += cratePairs.at(num2);
         } else {
             int thisval = numTrucks(num2, loadSize);
-            cratePairs.insert(num2, thisval);
+            cratePairs.insert(std::pair<int, int>(num2, thisval));
             thistotal += thisval;
         }
 
