@@ -5,13 +5,26 @@
 
 int main(){
     Reverse rev;
-    std::cout << rev.reverseString("midget") << "\n";
     Reverse newrev;
-    std::cout << newrev.reverseDigit(12345) << "\n";
-
     Truckloads truck1;
-    std::cout << truck1.numTrucks(14, 3) << "\n";
-
     EfficientTruckloads eff;
-    std::cout << eff.numTrucks(14, 3) << "\n";
+
+    int i; std::string s; int numCrates, loadSize;
+
+    std::cin >> i >> s >> numCrates >> loadSize;
+
+    int reversed_value = rev.reverseDigit(i);
+    if(reversed_value == -1){std::cout << "ERROR" << " ";}
+    else{std::cout << reversed_value << " ";}
+
+
+    std::cout << newrev.reverseString(s) << " ";
+    int truck1_value = truck1.numTrucks(numCrates, loadSize);
+    int efficient_truck_value = eff.numTrucks(numCrates, loadSize);
+
+    if(truck1_value == 0){std::cout << "ERROR" << " ";}
+    else{std::cout << truck1_value << " ";}
+
+    if(efficient_truck_value == 0){std::cout << "ERROR" << "\n";}
+    else{std::cout << efficient_truck_value << "\n";}
 }
