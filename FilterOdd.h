@@ -2,7 +2,7 @@
 #define FILTERODD_H
 #include "FilterGeneric.h"
 
-class FilterOdd {
+class FilterOdd: public FilterGeneric {
     private:
         bool g(int x);
 };

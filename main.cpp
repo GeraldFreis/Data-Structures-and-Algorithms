@@ -3,6 +3,11 @@
 #include "MapTriple.h"
 #include "MapSquare.h"
 #include "MapAbsoluteValue.h"
+#include "FilterGeneric.h"
+#include "FilterForTwoDigitPositive.h"
+#include "FilterNonPositive.h"
+#include "FilterOdd.h"
+
 
 int main(){
     MapGeneric *maps1 = new MapTriple;
@@ -29,4 +34,24 @@ int main(){
     std::vector<int> squaredvec = maps3->map(square);
     for(auto a: squaredvec){std::cout << a << " ";}
     std::cout << "\n";
+
+    FilterGeneric *filter1 = new FilterOdd;
+    FilterGeneric *filter2 = new FilterNonPositive;
+    FilterGeneric *filter3 = new FilterForTwoDigitPositive;
+
+    std::vector<int> odds({1, 3, 4, 6, 8, 9});
+    for(auto a: filter1->filter(odds)){
+        std::cout << a << " ";
+    } std::cout << "\n";
+
+    std::vector<int> nonpositive({-1, -3, -4, 6, 8, 9});
+    for(auto a: filter2->filter(nonpositive)){
+        std::cout << a << " ";
+    } std::cout << "\n";
+
+    std::vector<int> twodigitpos({10, 30, -4, -6, 8, 9});
+    for(auto a: filter3->filter(twodigitpos)){
+        std::cout << a << " ";
+    } std::cout << "\n";
+    
 }
