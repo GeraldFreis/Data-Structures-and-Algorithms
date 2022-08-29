@@ -8,6 +8,10 @@
 #include "FilterNonPositive.h"
 #include "FilterOdd.h"
 
+#include "ReduceGeneric.h"
+#include "ReduceMinimum.h"
+#include "ReduceGCD.h"
+
 
 int main(){
     MapGeneric *maps1 = new MapTriple;
@@ -54,4 +58,10 @@ int main(){
         std::cout << a << " ";
     } std::cout << "\n";
     
+    ReduceGeneric *reduce1 = new ReduceGCD;
+    ReduceGeneric *reduce2 = new ReduceMinimum;
+
+    std::vector<int> gcd({2, 6, 9, 10}); std::vector<int> min({1, 3, 4, 5, 3});
+    std::cout << reduce1->reduce(gcd) << " ";
+    std::cout << reduce2->reduce(min) << "\n";
 }

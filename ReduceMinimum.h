@@ -2,7 +2,8 @@
 #define REDUCEMINIMUM_H
 
 #include "ReduceGeneric.h"
-class ReduceMinimum : public ReduceGeneric{
+
+class ReduceMinimum : public ReduceGeneric {
     private:
         int binaryOperator(int x, int y);
 };

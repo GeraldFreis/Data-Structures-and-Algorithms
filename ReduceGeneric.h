@@ -1,11 +1,11 @@
 #ifndef REDUCEGENERIC_H
 #define REDUCEGENERIC_H
 
-#include <vector>   
+#include <vector>
 
 class ReduceGeneric {
     private:
-        int binaryOperator(int a, int b);
+        virtual int binaryOperator(int a, int b) = 0;
         
     public: 
         int reduce(std::vector<int> given_vector);
