@@ -1,6 +1,6 @@
 #include "MapAbsoluteValue.h"
+#include <cmath>
 
 int MapAbsoluteValue::f(int x){
-    #include <cmath>
     return abs(x);
 }

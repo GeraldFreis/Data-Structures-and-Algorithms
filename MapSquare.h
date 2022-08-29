@@ -1,4 +1,4 @@
-#ifndef MAPSQUARE
+#ifndef MAPSQUARE_H
 #define MAPSQUARE_H
 #include "MapGeneric.h"
 
