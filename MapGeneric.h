@@ -5,6 +5,7 @@
 class MapGeneric {
     private:
         virtual int f(int x) = 0;
+        std::vector<int> mapped_integers;
     
     public:
         std::vector<int> map(std::vector<int> vec);
