@@ -10,7 +10,7 @@ int ReduceGeneric::reduce(std::vector<int> given_vector){
         else {
             given_vector.pop_back();
         }
-        // iterating recurisvely through the rest of the function
+        // iterating recurisvely through the rest of the vector
         reduce(given_vector);
     }
     return binaryOperator(given_vector.at(0), given_vector.at(1));
