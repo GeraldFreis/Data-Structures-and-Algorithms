@@ -16,12 +16,12 @@
 
 
 int main(){
-    std::vector<int> userints;
-    for(int i = 0; i < 20; i++){
-        int x;
-        std::cin >> x;
-        userints.push_back(x);
-    }
+    std::vector<int> userints({-5, -24, -123, -81, 200, 157, 84, 67, -83, -60, -72, 192, -25, -20, -50, -181,-70, -15, -108, -123});
+    // for(int i = 0; i < 20; i++){
+    //     int x;
+    //     std::cin >> x;
+    //     userints.push_back(x);
+    // }
 
     MapGeneric *maptrip = new MapTriple; MapGeneric *mapabs = new MapAbsoluteValue;
     FilterGeneric *filtertwodigs = new FilterForTwoDigitPositive; FilterGeneric *filterodds = new FilterOdd;
