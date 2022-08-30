@@ -13,12 +13,11 @@ int ReduceGCD::binaryOperator(int x, int y){
 ReduceGCD::ReduceGCD(){gcd = 0;}
 
 int ReduceGCD::reduce(std::vector<int> given_vector){
-    if(given_vector.size() > 2){
-        for(int i = 1; i < given_vector.size()-1; i++){
+    if(given_vector.size() >= 2){
+        for(int i = 1; i < given_vector.size(); i++){
             if(given_vector.at(i) != given_vector.at(0)){
                 int result = binaryOperator(given_vector.at(0), given_vector.at(i));
                 if(result > gcd){gcd = result;}
-                // std::cout << given_vector.at(i) << " " << given_vector.at(0) << " " << result << " " << gcd <<"\n";
             }
         }
 
