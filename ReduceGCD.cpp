@@ -28,5 +28,5 @@ int ReduceGCD::reduce(std::vector<int> given_vector){
 
         reduce(given_vector);
     }
-    return gcd;
+    return binaryOperator(given_vector.at(0), given_vector.at(1));
 }
