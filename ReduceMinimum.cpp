@@ -10,20 +10,25 @@ ReduceMinimum::ReduceMinimum(){
 }
 
 int ReduceMinimum::reduce(std::vector<int> given_vector){
-    if(given_vector.size() > 2){
-        if(given_vector.at(0) != given_vector.at(1)){
-            int result = binaryOperator(given_vector.at(0), given_vector.at(1));
+    // if(given_vector.size() > 2){
+    //     if(given_vector.at(0) != given_vector.at(1)){
+    //         int result = binaryOperator(given_vector.at(0), given_vector.at(1));
 
-            if(result == given_vector.at(0)){given_vector.erase(given_vector.begin());}
-            else if(result == given_vector.at(1)){given_vector.erase(given_vector.begin()+1);}
+    //         if(result == given_vector.at(0)){given_vector.erase(given_vector.begin());}
+    //         else if(result == given_vector.at(1)){given_vector.erase(given_vector.begin()+1);}
 
-            min = reduce(given_vector);
-        }
+    //         min = reduce(given_vector);
+    //     }
+    // }
+
+    // if(binaryOperator(given_vector.at(0), given_vector.at(1) < min)){
+    //     return binaryOperator(given_vector.at(0), given_vector.at(1));
+    // } else {
+    //     return min;
+    // }
+    int min = given_vector.at(0);
+    for(int i = 1; i < given_vector.size(); i++){
+        if(given_vector.at(i) < min){min = given_vector.at(i);}
     }
-
-    if(binaryOperator(given_vector.at(0), given_vector.at(1) < min)){
-        return binaryOperator(given_vector.at(0), given_vector.at(1));
-    } else {
-        return min;
-    }
+    return min;
 }
