@@ -15,7 +15,7 @@ int ReduceMinimum::reduce(std::vector<int> given_vector){
             min = binaryOperator(given_vector.at(0), given_vector.at(1));
         }   
 
-        given_vector.erase(given_vector.begin()); given_vector.erase(given_vector.begin()+1);
+        given_vector.erase(given_vector.begin());
 
         reduce(given_vector);
     }
