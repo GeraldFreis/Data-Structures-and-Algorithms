@@ -12,8 +12,9 @@ ReduceMinimum::ReduceMinimum(){
 int ReduceMinimum::reduce(std::vector<int> given_vector){
     if(given_vector.size() > 2){
         int result = binaryOperator(given_vector.at(0), given_vector.at(1));
+
         if(result == given_vector.at(0)){given_vector.erase(given_vector.begin());}
-        else{given_vector.erase(given_vector.begin()+1);}
+        else if(result == given_vector.at(1)){given_vector.erase(given_vector.begin()+1);}
 
         min = reduce(given_vector);
     }
