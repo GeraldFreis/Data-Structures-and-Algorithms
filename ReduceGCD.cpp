@@ -11,7 +11,7 @@ int ReduceGCD::binaryOperator(int x, int y){
 }
 
 ReduceGCD::ReduceGCD(){
-    gcd = 0;
+    gcd = -100;
 }
 
 int ReduceGCD::reduce(std::vector<int> given_vector){
