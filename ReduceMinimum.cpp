@@ -14,7 +14,7 @@ int ReduceMinimum::reduce(std::vector<int> given_vector){
             given_vector.pop_back();
         } 
         else {
-            given_vector.erase(given_vector.begin())
+            given_vector.erase(given_vector.begin());
         }
         // iterating recurisvely through the rest of the vector
         reduce(given_vector);
