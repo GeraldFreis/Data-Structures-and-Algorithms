@@ -6,7 +6,7 @@ int ReduceMinimum::binaryOperator(int x, int y){
 }
 
 ReduceMinimum::ReduceMinimum(){
-    min = 0;
+    min = 10000;
 }
 
 int ReduceMinimum::reduce(std::vector<int> given_vector){
