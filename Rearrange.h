@@ -3,7 +3,6 @@
 #include "Mutator.h"
 class Rearrange: public Mutator {
     public:
-        Rearrange();
         Individual mutate(Individual i, int k);
 };
 
