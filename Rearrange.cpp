@@ -11,4 +11,5 @@ Individual Rearrange::mutate(Individual i, int k){
 
     Individual new_indie(list_post_k_inc_k + list_pre_k);
     return new_indie;
+
 }
