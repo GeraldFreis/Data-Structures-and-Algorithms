@@ -52,7 +52,7 @@ int Individual::getMaxOnes(){
         }
         else if(a == 1 || a == 49){
             counter ++;
-            max_counter = counter;
+            if(counter > max_counter){max_counter = counter;}
         }
 
         else{
