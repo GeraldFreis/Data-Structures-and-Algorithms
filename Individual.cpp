@@ -1,4 +1,5 @@
 #include "Individual.h"
+#include <iostream>
 
 Individual::Individual(int binaryLength){
 }
@@ -12,7 +13,7 @@ Individual::Individual(std::string binary){
 std::string Individual::getString(){
     std::string new_string;
     for(auto a: binaryRepresentation){
-        new_string += std::to_string(a);
+        new_string += a;
     }
     return new_string;
 }
@@ -46,7 +47,7 @@ int Individual::getMaxOnes(){
         }
         else{prev_val = a; counter = 0;}
     }
-    
+
     return max_counter;
 };
 
