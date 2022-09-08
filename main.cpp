@@ -23,6 +23,7 @@ int main(){
         userints.push_back(x);
     }
 
+
     MapGeneric *maptrip = new MapTriple; MapGeneric *mapabs = new MapAbsoluteValue;
     FilterGeneric *filtertwodigs = new FilterForTwoDigitPositive; FilterGeneric *filterodds = new FilterOdd;
     ReduceGeneric *reducemin = new ReduceMinimum; ReduceGeneric *reducegcd = new ReduceGCD;
