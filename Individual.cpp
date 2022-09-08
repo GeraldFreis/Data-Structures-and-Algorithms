@@ -35,11 +35,17 @@ void Individual::flipBit(int pos){
         else{binaryRepresentation.at(pos) = 0;
         } // can only be 0 or 1 right (presumably)
     }
+    else{
+        pos = pos - binaryRepresentation.size();
+        if(binaryRepresentation.at(pos) == 0 || binaryRepresentation.at(pos) == 48){binaryRepresentation.at(pos) = 1;}
+        else{binaryRepresentation.at(pos) = 0;
+        } //
+    }
 }
 
 int Individual::getMaxOnes(){
     int max_counter = 0;
-    int counter = 1;
+    int counter = 0;
     int prev_val = binaryRepresentation.at(0);
     
     for(auto a: binaryRepresentation){
