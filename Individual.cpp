@@ -39,19 +39,26 @@ void Individual::flipBit(int pos){
 
 int Individual::getMaxOnes(){
     int max_counter = 0;
-    int counter = 0;
+    int counter = 1;
     int prev_val = binaryRepresentation.at(0);
     
     for(auto a: binaryRepresentation){
-        if(a != 0 && prev_val == 49){
+
+        if(a == 1 || a == 49 && (prev_val == 49 || prev_val == 1)){
             counter++; 
-            prev_val = a;
-            if(counter > max_counter){max_counter = counter;}
+            if(counter > max_counter){
+                max_counter = counter;
+            }
         }
+        else if(a == 1 || a == 49){
+            counter ++;
+        }
+
         else{
-            prev_val = a; 
             counter = 0;
         }
+
+        prev_val = a;
     }
 
     return max_counter;

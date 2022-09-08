@@ -24,5 +24,6 @@ int main(){
     Mutator *Rearr = new Rearrange;
 
     std::cout << execute(&I1, BitFl, k1)->getString() << " ";
-    std::cout << execute(&I2, Rearr, k2)->getString() << " " << execute(&I2, Rearr, k2)->getMaxOnes() << "\n";
+    Individual *output2 = execute(&I2, Rearr, k2);
+    std::cout << output2->getString() << " " << execute(&I2, Rearr, k2)->getMaxOnes() << "\n";
 }
