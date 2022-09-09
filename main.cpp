@@ -7,7 +7,7 @@
 
 Individual * execute(Individual * indPtr, Mutator * mPtr, int k){
     Individual *newindividualmeme =  new Individual(10);
-    k = k-1;
+    if(k != 0){k = k-1;}
     *newindividualmeme = mPtr->mutate(*indPtr, k);
 
     return newindividualmeme;
