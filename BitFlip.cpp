@@ -1,7 +1,12 @@
 #include "BitFlip.h"
 
 Individual BitFlip::mutate(Individual i, int k){
-    if(k > i.getLength()){k = i.getLength() - k;}
+    // properly checking and dividing by occurrence
+    if(k > i.getLength()){
+        int dividend = k / i.getLength();
+        k = k - (dividend * i.getLength());
+    }
+    
     i.flipBit(k);
     return i;
 }
