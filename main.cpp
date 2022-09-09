@@ -8,6 +8,7 @@
 Individual * execute(Individual * indPtr, Mutator * mPtr, int k){
     Individual *newindividualmeme =  new Individual(10);
     if(k != 0){k = k-1;}
+
     *newindividualmeme = mPtr->mutate(*indPtr, k);
 
     return newindividualmeme;
@@ -25,5 +26,5 @@ int main(){
 
     std::cout << execute(&I1, BitFl, k1)->getString() << " ";
     Individual *output2 = execute(&I2, Rearr, k2);
-    std::cout << output2->getString() << " " << execute(&I2, Rearr, k2)->getMaxOnes() << "\n";
+    std::cout << output2->getString() << " " << execute(&I2, Rearr, k2)->getMaxOnes();
 }
