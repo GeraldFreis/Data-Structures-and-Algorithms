@@ -1,7 +1,7 @@
-// #include <iostream>
-
 
 int numDup(int arr[], int start, int size, int element){
+    if(start < 0){return 0;}
+    
     int count = 0;
     if(arr[start] == element){count++;}
 
@@ -12,8 +12,3 @@ int numDup(int arr[], int start, int size, int element){
     }
     return count;
 }
-
-// int main(){
-//     int arr[] ={1,3,3,4};
-//     std::cout << numDup(arr, 0, 4, 3) << "\n";
-// }
