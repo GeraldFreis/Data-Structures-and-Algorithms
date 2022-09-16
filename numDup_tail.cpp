@@ -1,18 +1,18 @@
 #include <iostream>
 
-int numDup(int arr[], int start, int size, int element) {
+
+
+int numDup(int arr[], int start, int size, int element){
+    int count = 0;
+    if(arr[start] == element){count++;}
     if(start == size-1){
-        return 0;
-    } 
-    if(arr[start] == element){
-        return 1+numDup(arr, start++, size, element);
+        return count;
     }
-    else {
-        return numDup(arr, start++, size, element);
-    }
+    start = start + 1;
+    return count + numDup(arr, start, size, element); 
 }
 
 int main(){
-    int array[] = {1,2,3,4,5,6,6};
-    std::cout << numDup(array, 0, 7, 6) << "\n";
+    int arr[] ={1,3,3,4};
+    std::cout << numDup(arr, 0, 4, 3) << "\n";
 }
