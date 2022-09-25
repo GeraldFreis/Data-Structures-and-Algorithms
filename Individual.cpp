@@ -2,6 +2,9 @@
 #include <iostream>
 
 Individual::Individual(int binaryLength){
+    for(int i = 0; i < binaryLength; i++){
+        binaryRepresentation.push_back(0);
+    }
 }
 
 Individual::Individual(std::string binary){
