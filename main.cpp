@@ -5,9 +5,8 @@
 
 int main(){
     std::vector<int> a({1,4,2,6,3,9,8,5});
-    BubbleSort bub;
-    std::vector<int> returned;
-    returned = bub.sort(a);
+    Sort *bub = new BubbleSort;
+    std::vector<int> returned = bub->sort(a);
     for(auto a: returned){
         std::cout << a << " ";
     }

@@ -10,7 +10,7 @@ bool issorted(std::vector<int> veccie){
     return true;
 }
 
-std::vector<int> sort(std::vector<int> list){
+std::vector<int> BubbleSort::sort(std::vector<int> list){
     if(issorted(list) == false){
         for(int i = 1; i < list.size(); i++){
             if(list.at(i) < list.at(i-1)){
