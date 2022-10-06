@@ -1,8 +1,9 @@
 #include "RecursiveBinarySearch.h"
 #include <vector>
-
+#include <iostream>
 
 bool RecursiveBinarySearch::search(std::vector<int> item_vector, int item_wanted, int left_index, int right_index){
+    std::cout << item_vector.at(left_index) << " " << item_vector.at(right_index) << "\n";
     if(item_vector.at(right_index) == item_wanted || item_vector.at(left_index) == item_wanted){
         return true;
     }

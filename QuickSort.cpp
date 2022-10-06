@@ -1,61 +1,56 @@
 #include "QuickSort.h"
 #include <vector>
 #include <iostream>
-// how quick sort works:
-/*
-    if range is smaller than 2 elements return immediately after checking if they are in ascending order
-    if not:
-        pivot on 3rd elemnt in range
-        move all elements less than the pivot to its left and all those to its right
-        recursively call the function on the three first elements and those after it in two separate calls
-*/
-std::vector<int> QuickSort::sort(std::vector<int> list){
-    int pivot = 0;
 
-    if(list.size() == 1){
-        return list;
+bool is_sorted(std::vector<int> given_vector){
+    for(int i = 1; i < given_vector.size(); i++){
+        if(given_vector.at(i) < given_vector.at(i-1)){return false;}
+    }
+    return true;
+}
+
+std::vector<int> QuickSort::sort(std::vector<int> given_vector){
+    // checking if the given vector is at least of len 3
+    if(given_vector.size() == 1){
+        return given_vector;
+    } else if(given_vector.size() == 2){
+        if(given_vector.at(1) < given_vector.at(0)){
+            int tempval = given_vector.at(0);
+            given_vector.at(0) = given_vector.at(1);
+            given_vector.at(1) = tempval;
+        }
+        return given_vector;
     }
 
-    else if(list.size() == 2){
-        if(list.at(0) > list.at(1)){
-            int tempval = list.at(0);
-            list.at(0) = list.at(1);
-            list.at(1) = tempval;
-        }
-        return list;
-    }
-    if(list.size() == 3){return list;}
-    pivot = list.at(2);
-    // moving all items less than the pivot into a new vector, and all those greater into a different vector
-    std::vector<int> less_vector, greater_vector;
-    
-    for(auto a: list){
-        if(a < pivot){less_vector.push_back(a);}
-        else {greater_vector.push_back(a);}
-    } 
-    less_vector.push_back(pivot);
-    
-    for(auto a: greater_vector){
-        less_vector.push_back(a);
-    } // adding all values from greater into the less
-    
-    std::vector<int> subrange_vector, post_range_vector;
-    for(int i = 0; i < less_vector.size(); i++){
-        if(i < 3){
-            subrange_vector.push_back(less_vector.at(i));
-        }
-        else {
-            post_range_vector.push_back(less_vector.at(i));
-        }
-        std::cout << less_vector.at(i) << " ";
-    }
-    std::cout << std::endl;
-    std::vector<int> returnlist_low, returnlist_high;
-    returnlist_low = sort(subrange_vector);
-    returnlist_high = sort(post_range_vector);
+    int pivot_value = given_vector.at(2); // making the pivot the third value in the vector
 
-    for(auto a: returnlist_high){
-        returnlist_low.push_back(a);
+    // moving all smaller values to the left of the vector and larger values to the right
+    std::vector<int> changed_vector({pivot_value});
+    int counter = 0;
+    for(auto a: given_vector){
+        if(a < pivot_value){
+            changed_vector.insert(changed_vector.begin()+counter, a);
+            counter += 1;
+        } else if(a > pivot_value){
+            changed_vector.push_back(a);
+        } else if(a == pivot_value){
+            changed_vector.insert(changed_vector.begin()+counter+1, a);
+        }
     }
-    return returnlist_low;
+    
+    // cutting the vector in half and passing first half recursively and second half recursively then putting them back together
+    std::vector<int> low_vec, high_vec;
+    for(int i = 0; i < changed_vector.size(); i++){
+        if(i < int(changed_vector.size()/2)){low_vec.push_back(changed_vector.at(i));}
+        else {high_vec.push_back(changed_vector.at(i));}
+        std::cout << changed_vector.at(i) << " ";
+    }
+    std::cout << "\n";
+    low_vec = sort(low_vec); high_vec = sort(high_vec);
+    for(auto a: high_vec){low_vec.push_back(a);}
+
+    while(is_sorted(low_vec) == false){
+        low_vec = sort(low_vec);
+    }
+    return low_vec;    
 }
