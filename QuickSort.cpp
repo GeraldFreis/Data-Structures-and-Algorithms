@@ -27,12 +27,15 @@ std::vector<int> QuickSort::sort(std::vector<int> given_vector){
     // moving all smaller values to the left of the vector and larger values to the right
     std::vector<int> changed_vector({pivot_value});
     int counter = 0;
-    for(auto a: given_vector){
-        if(a < pivot_value){
-            changed_vector.insert(changed_vector.begin()+counter, a);
+    for(int i = 0; i < given_vector.size(); i++){
+        if(given_vector.at(i) < pivot_value){
+            changed_vector.insert(changed_vector.begin()+counter, given_vector.at(i));
             counter += 1;
-        } else if(a > pivot_value){
-            changed_vector.push_back(a);
+        } else if(given_vector.at(i) > pivot_value){
+            changed_vector.push_back(given_vector.at(i));
+        }
+        else if(given_vector.at(i) == pivot_value && i != 2){
+            changed_vector.push_back(given_vector.at(i));
         }
     }
     
