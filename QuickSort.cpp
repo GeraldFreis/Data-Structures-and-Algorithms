@@ -41,9 +41,9 @@ std::vector<int> QuickSort::sort(std::vector<int> given_vector){
     for(int i = 0; i < changed_vector.size(); i++){
         if(i < int(changed_vector.size()/2)){low_vec.push_back(changed_vector.at(i));}
         else {high_vec.push_back(changed_vector.at(i));}
-        // std::cout << changed_vector.at(i) << " ";
+        std::cout << changed_vector.at(i) << " ";
     }
-    // std::cout << "\n";
+    std::cout << "\n";
     low_vec = sort(low_vec); high_vec = sort(high_vec);
     for(auto a: high_vec){low_vec.push_back(a);}
 

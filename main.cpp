@@ -7,9 +7,9 @@
 
 int main(){
     std::vector<int> a;
-    for(int i = 0; i < 8; i++){
-        int val;
-        std::cin >> val;
+    int val;
+
+    while(std::cin >> val){
         a.push_back(val);
     }
     Sort *quickie = new QuickSort;
