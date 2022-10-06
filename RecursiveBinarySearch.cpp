@@ -3,7 +3,7 @@
 #include <iostream>
 
 bool RecursiveBinarySearch::search(std::vector<int> item_vector, int item_wanted, int left_index, int right_index){
-    std::cout << item_vector.at(left_index) << " " << item_vector.at(right_index) << "\n";
+    // std::cout << item_vector.at(left_index) << " " << item_vector.at(right_index) << "\n";
     if(item_vector.at(right_index) == item_wanted || item_vector.at(left_index) == item_wanted){
         return true;
     }
@@ -11,13 +11,13 @@ bool RecursiveBinarySearch::search(std::vector<int> item_vector, int item_wanted
         return false;
     }
     if(item_vector.at(right_index) > item_wanted){
-        return search(item_vector, item_wanted, left_index, int(right_index--));
+        return search(item_vector, item_wanted, left_index, right_index-1);
     }
-    if(item_vector.at(right_index) < item_wanted && right_index == item_vector.size()-1){
+    if(item_vector.at(right_index) < item_wanted && right_index == 0){
         return false;
     }
     if(item_vector.at(left_index) > item_wanted && left_index!=0){
-        return search(item_vector, item_wanted, int(left_index/2), right_index);
+        return search(item_vector, item_wanted, left_index-1, right_index);
     }
 
     return false;

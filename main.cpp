@@ -2,22 +2,26 @@
 #include "Sort.h"
 #include "BubbleSort.h"
 #include "QuickSort.h"
+#include "RecursiveBinarySearch.h"
 #include <vector>
 
 int main(){
-    std::vector<int> a({1,4,2,6,3,9,8,5});
-    Sort *bub = new BubbleSort;
-    std::vector<int> returned = bub->sort(a);
-    for(auto b: returned){
-        std::cout << b << " ";
+    std::vector<int> a;
+    for(int i = 0; i < 8; i++){
+        int val;
+        std::cin >> val;
+        a.push_back(val);
     }
-    std::cout <<  "\n";
-    
-    Sort *quick = new QuickSort;
-    std::vector<int> returned_sort = quick->sort(a);
+    Sort *quickie = new QuickSort;
+    RecursiveBinarySearch recurse;
 
-    for(auto b: returned_sort){
+    a = quickie->sort(a);
+    bool ifonein = recurse.search(a, 1);
+    if(ifonein == true){std::cout << "true ";}
+    else{std::cout << "false ";}
+
+    for(auto b: a){
         std::cout << b << " ";
     }
-    std::cout <<  "\n";
+    std::cout << "\n";
 }
