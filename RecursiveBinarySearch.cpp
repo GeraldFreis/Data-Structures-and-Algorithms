@@ -10,11 +10,10 @@ bool RecursiveBinarySearch::search(std::vector<int> item_vector, int item_wanted
     if(left_index == item_vector.size()-1 || right_index == 1){
         return false;
     }
-
     if(item_vector.at(right_index) > item_wanted){
-        return search(item_vector, item_wanted, left_index, int(right_index/2));
+        return search(item_vector, item_wanted, left_index, int(right_index--));
     }
-    if(item_vector.at(right_index) < item_wanted && right_index <= item_vector.size()-1){
+    if(item_vector.at(right_index) < item_wanted && right_index == item_vector.size()-1){
         return false;
     }
     if(item_vector.at(left_index) > item_wanted && left_index!=0){
