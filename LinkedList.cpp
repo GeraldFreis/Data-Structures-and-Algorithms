@@ -118,12 +118,38 @@ void  LinkedList::deleteAtPosition(int position){
 
 // iterate till nullptr check current node, return whatever they want for whatever they need
 int  LinkedList::search(int item){
-    
+    Node *current_node = head;
+    int position = 0; int counter = 1;
+
+    while(current_node->getNextNode()!=nullptr){
+
+        if(current_node->getData() == item){
+            position = counter; 
+            std::cout << position << " ";
+            return position;
+        }
+        current_node = current_node->getNextNode();
+        counter++;
+    }
+    return 0;
 };
 
 // iterate untill nullptr, increment counter, return node->getData() when counter = position
 int  LinkedList::getItem(int position){
+    int counter = 1; 
+    Node *current_node = head;
 
+    while(current_node->getNextNode() != nullptr){
+        if(counter == position){
+            std::cout << current_node->getData() << " ";
+            return current_node->getData();
+        }
+        else {
+            current_node = current_node->getNextNode();
+            counter++; 
+        }
+    }
+    return 0;
 };
 
 void  LinkedList::printItems(){
