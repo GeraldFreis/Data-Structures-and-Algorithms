@@ -15,7 +15,9 @@ int main(){
     }
 
     std::string command_string = "GI";
-    std::cin >> command_string;
+    while(std::cin >> command_string){
+        
+    }
     
     int other_val_1, other_val_2;
     if(command_string == "AF"){
