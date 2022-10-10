@@ -111,7 +111,6 @@ void  LinkedList::deleteAtPosition(int position){
 
     while(current_node->getNextNode() != nullptr){
         if(counter == position){
-
         }
     }
 };
