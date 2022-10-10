@@ -11,13 +11,12 @@ int main(){
     list->addFront(given_val);
 
     while(std::cin >> given_val){
+        std::cout << given_val << " ";
         list->addEnd(given_val);
     }
 
-    std::string command_string = "GI";
-    while(std::cin >> command_string){
-        
-    }
+    std::string command_string;
+    std::cin >> command_string;
     
     int other_val_1, other_val_2;
     if(command_string == "AF"){
