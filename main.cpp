@@ -13,33 +13,36 @@ int main(){
     while(std::cin >> given_val){
         list->addEnd(given_val);
     }
-    std::string command_string;
-    std::cin >> command_string;
 
+    std::string command_string = "GI";
+    std::cin >> command_string;
+    
+    int other_val_1, other_val_2;
     if(command_string == "AF"){
-        std::cin >> given_val;
-        list->addFront(given_val);
+        std::cin >> other_val_1;
+        list->addFront(other_val_1);
     } else if(command_string == "AE"){
-        std::cin >> given_val;
-        list->addEnd(given_val);
+        std::cin >> other_val_1;
+        list->addEnd(other_val_1);
     } else if(command_string == "AP"){
         int position;
-        std::cin >> given_val >> position;
-        std::cout << given_val << " " << position << "\n";
-        list->addAtPosition(position, given_val);
+        std::cin >> other_val_1 >> other_val_2;
+        std::cout << "\n" << other_val_1 << " " << other_val_2 << "\n";
+        list->addAtPosition(other_val_2, other_val_1);
     } else if(command_string == "S"){
-        std::cin >> given_val;
-        list->search(given_val);
+        std::cin >> other_val_1;
+        list->search(other_val_1);
     } else if(command_string == "DF"){
         list->deleteFront();
     } else if(command_string == "DE"){
         list->deleteEnd();
     } else if(command_string == "DP"){
-        std::cin >> given_val;
-        list->deleteAtPosition(given_val);
+        std::cin >> other_val_1;
+        list->deleteAtPosition(other_val_1);
     } else if(command_string == "GI"){
-        std::cin >> given_val;
-        list->getItem(given_val);
+        std::cin >> other_val_1;
+        std::cout << "\n" << other_val_1 << "\n";
+        list->getItem(other_val_1);
     }
     list->printItems();
 }

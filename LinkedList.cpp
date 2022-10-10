@@ -57,6 +57,7 @@ void  LinkedList::addEnd(int newitem){
             new_node->setNextNode(nullptr);
 
             current_node->setNextNode(new_node);
+            // std::cout << new_node->getData() << "\n";
             sentinel_value = false;
         }
 
@@ -72,7 +73,7 @@ void  LinkedList::addAtPosition(int position, int newitem){
     Node *current_node = head;
 
     while(current_node->getNextNode() != nullptr){
-        if(counter == position){
+        if(counter == position-1){
             Node *new_node = new Node;
             new_node->setData(newitem);
             new_node->setNextNode(current_node->getNextNode());
@@ -110,7 +111,14 @@ void  LinkedList::deleteAtPosition(int position){
     int counter = 1;
 
     while(current_node->getNextNode() != nullptr){
-        if(counter == position){
+        if(counter == position-1){
+            Node *ahead_node = current_node->getNextNode()->getNextNode();
+            current_node->setNextNode(ahead_node);
+            return;
+        }
+        else {
+            current_node = current_node->getNextNode();
+            counter++;
         }
     }
 };
@@ -140,10 +148,12 @@ int  LinkedList::getItem(int position){
 
     while(current_node->getNextNode() != nullptr){
         if(counter == position){
+            // std::cout << "here" << "\n";
             std::cout << current_node->getData() << " ";
             return current_node->getData();
         }
         else {
+            // std::cout << counter  << "\n";
             current_node = current_node->getNextNode();
             counter++; 
         }
