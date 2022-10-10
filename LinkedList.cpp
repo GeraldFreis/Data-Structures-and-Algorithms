@@ -69,13 +69,14 @@ void  LinkedList::addEnd(int newitem){
 
 // create new item node, iterate through nodeset until nullptr, and increment counter, make next node the new nodes next node, make new node next node of current node
 void  LinkedList::addAtPosition(int position, int newitem){
+    if(position == 0){return;}
     int counter = 1;
     Node *current_node = head;
 
     while(current_node->getNextNode() != nullptr){
-        if(counter == position-1){
+        if(counter == position){
             Node *new_node = new Node;
-            new_node->setData(newitem);
+            new_node->setData(newitem);  
             new_node->setNextNode(current_node->getNextNode());
             current_node->setNextNode(new_node);
             return;
@@ -167,4 +168,5 @@ void  LinkedList::printItems(){
         std::cout << previous_node->getData() <<  " ";
         previous_node = previous_node->getNextNode();
     }
+    std::cout << previous_node->getData();
 };

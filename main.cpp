@@ -7,12 +7,11 @@
 int main(){
     LinkedList *list = new LinkedList;
     int given_val;
-    std::cin >> given_val;
-    list->addFront(given_val);
-
+    int counter = 0;
     while(std::cin >> given_val){
-        std::cout << given_val << " ";
-        list->addEnd(given_val);
+        if(counter == 0){list->addFront(given_val); counter++;}
+        else {list->addEnd(given_val);}
+        // std::cout << given_val << "\n";
     }
 
     std::string command_string;
