@@ -109,7 +109,7 @@ void LinkedList::deleteEnd(){
 }
 
 // iterate till nullptr, increment counter, check if counter is position, save next node ptr, delete current node, make previous node next ptr 
-void  LinkedList::deleteAtPosition(int position){
+void  LinkedList::deletePosition(int position){
     if(position < 1){std::cout << "outside range";}
     Node *current_node = head; 
     int counter = 1;

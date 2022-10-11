@@ -17,7 +17,7 @@ class LinkedList {
         
         void deleteFront();
         void deleteEnd();
-        void deleteAtPosition(int position);
+        void deletePosition(int position);
         
         int search(int item);
         int getItem(int position);
