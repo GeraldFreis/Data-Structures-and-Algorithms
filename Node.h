@@ -1,5 +1,5 @@
-#ifndef NODE
-#define NODE
+#ifndef NODE_H
+#define NODE_H
 
 class Node {
     private:
@@ -7,12 +7,12 @@ class Node {
         int data;
     
     public:
-        Node(Node *nextnode, int _data);
+        Node(Node *next_node, int _data);
         Node();
         Node *getNextNode();
         int getData();
 
-        void setNextNode(Node *nextnode);
+        void setNextNode(Node *next_node);
         void setData(int _data);
 };
 
