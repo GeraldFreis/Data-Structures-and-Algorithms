@@ -10,7 +10,7 @@ Node::Node(){
     data = 0;
 }
 
-Node *Node::getNextNode(){
+Node *Node::getNext(){
     return next;
 };
 
@@ -18,7 +18,7 @@ int Node::getData(){
     return data;
 };
 
-void Node::setNextNode(Node *_nextnode){
+void Node::setNext(Node *_nextnode){
     next = _nextnode;
 };
 

@@ -10,10 +10,10 @@ class Node {
         // Node(Node *next_node, int _data);
         Node();
 
-        Node *getNextNode();
+        Node *getNext();
         int getData();
 
-        void setNextNode(Node *next_node);
+        void setNext(Node *next_node);
         void setData(int _data);
 };
 
