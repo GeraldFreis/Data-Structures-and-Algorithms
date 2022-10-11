@@ -1,5 +1,6 @@
-#include "LinkedList.h"
 #include <iostream>
+#include "LinkedList.h"
+#include "Node.h"
 
 LinkedList::LinkedList(){
     head = new Node;
@@ -24,7 +25,7 @@ LinkedList::LinkedList(int size){
 }
 
 LinkedList::LinkedList(int *array, int size){
-    head = new Node(); head->setData(array[0]);
+    head = new Node; head->setData(array[0]);
     Node *previous_node = head;
     
     for(int i = 1; i < size; i++){
@@ -83,7 +84,7 @@ void  LinkedList::addEnd(int newitem){
 }
 
 // create new item node, iterate through nodeset until nullptr, and increment counter, make next node the new nodes next node, make new node next node of current node
-void  LinkedList::addAtPosition(int position, int newitem){
+void LinkedList::addAtPosition(int position, int newitem){
     if(position == 0){return;}
     int counter = 1;
     Node *current_node = head;

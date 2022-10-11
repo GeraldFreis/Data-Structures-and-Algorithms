@@ -1,5 +1,5 @@
-#include "LinkedList.h"
 #include <iostream>
+#include "LinkedList.h"
 
 
 int main(){
@@ -23,7 +23,7 @@ int main(){
             if(raw_input_string[i+1] != ' ' && raw_input_string[i+1] <= 57){ 
                 std::string newstring; 
                 newstring += raw_input_string[i];
-                newstring+= raw_input_string[i+1];
+                newstring += raw_input_string[i+1];
                 // std::cout << newstring << "\n";
                 given_array[counter] = std::stoi(newstring); counter++;
                 i++;
@@ -34,10 +34,11 @@ int main(){
             }
         }
     }
-    // std::cout << command_string << "\n";
-    param1 = raw_input_string[raw_input_string.size()-3]-'0'; param2 = raw_input_string[raw_input_string.size()-1] - '0';
-    // std::cout << param1 << " " << param2 << "\n";
-    LinkedList *list =  new LinkedList(given_array, counter);
+
+    param1 = raw_input_string[raw_input_string.size()-3]-'0';
+    param2 = raw_input_string[raw_input_string.size()-1] - '0';
+    LinkedList *list = new LinkedList(given_array, counter);
+
     if(command_string == "AF"){
         list->addFront(param1);
     } else if(command_string == "AE"){
@@ -55,5 +56,7 @@ int main(){
     } else if(command_string == "GI"){
         list->getItem(param1);
     }
+    
     list->printItems();
+    return 0;
 }

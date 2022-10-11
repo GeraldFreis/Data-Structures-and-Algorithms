@@ -9,6 +9,7 @@ class Node {
     public:
         Node(Node *next_node, int _data);
         Node();
+        
         Node *getNextNode();
         int getData();
 
