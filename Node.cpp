@@ -6,12 +6,12 @@
 // };
 
 Node::Node(){
-    nextnode = nullptr;
+    next = nullptr;
     data = 0;
 }
 
 Node *Node::getNextNode(){
-    return nextnode;
+    return next;
 };
 
 int Node::getData(){
@@ -19,7 +19,7 @@ int Node::getData(){
 };
 
 void Node::setNextNode(Node *_nextnode){
-    nextnode = _nextnode;
+    next = _nextnode;
 };
 
 void Node::setData(int _data){
