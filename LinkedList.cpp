@@ -89,7 +89,7 @@ void  LinkedList::addAtPosition(int position, int newitem){
     Node *current_node = head;
 
     while(current_node->getNextNode() != nullptr){
-        if(counter == position){
+        if(counter == position-1){
             Node *new_node = new Node;
             new_node->setData(newitem);  
             new_node->setNextNode(current_node->getNextNode());
@@ -127,7 +127,7 @@ void  LinkedList::deleteAtPosition(int position){
     int counter = 1;
 
     while(current_node->getNextNode() != nullptr){
-        if(counter == position){
+        if(counter == position-1){
             Node *ahead_node = current_node->getNextNode()->getNextNode();
             current_node->setNextNode(ahead_node);
             return;
