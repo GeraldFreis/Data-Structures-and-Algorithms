@@ -84,7 +84,8 @@ void  LinkedList::addEnd(int newitem){
 
 // create new item node, iterate through nodeset until nullptr, and increment counter, make next node the new nodes next node, make new node next node of current node
 void LinkedList::addAtPosition(int position, int newitem){
-    if(position == 0){return;}
+    if(position < 1){addFront(newitem);}
+    
     int counter = 1;
     Node *current_node = head;
 
@@ -99,6 +100,7 @@ void LinkedList::addAtPosition(int position, int newitem){
         current_node = current_node->getNextNode();
         counter++;
     }
+    addEnd(newitem);
 }
 
 // get ptr to next node, delete head, make head variable the ptr ot the next node
