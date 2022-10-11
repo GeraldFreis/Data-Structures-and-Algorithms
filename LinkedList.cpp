@@ -163,7 +163,7 @@ int  LinkedList::getItem(int position){
     Node *current_node = head;
 
     while(current_node->getNextNode() != nullptr){
-        if(counter == position){
+        if(counter == position-1){
             // std::cout << "here" << "\n";
             std::cout << current_node->getData() << " ";
             return current_node->getData();
