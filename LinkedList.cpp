@@ -3,8 +3,7 @@
 #include "Node.h"
 
 LinkedList::LinkedList(){
-    head = new Node;
-    head->setData(0);
+    head = nullptr;
 }
 
 LinkedList::LinkedList(int size){
