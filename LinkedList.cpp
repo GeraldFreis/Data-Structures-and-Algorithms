@@ -1,11 +1,10 @@
 #include "LinkedList.h"
 #include <iostream>
 
-
 LinkedList::LinkedList(){
     head = new Node;
     head->setData(0);
-};
+}
 
 LinkedList::LinkedList(int size){
     head = new Node; head->setData(0);
@@ -22,7 +21,7 @@ LinkedList::LinkedList(int size){
         }
     }
 
-};
+}
 
 LinkedList::LinkedList(int *array, int size){
     head = new Node(); head->setData(array[0]);
@@ -48,7 +47,7 @@ LinkedList::~LinkedList(){
         delete previous_node;
         previous_node = current_node;
     }
-};
+}
 
 // create a new node with the info, create capacity for head, make new node head, make it point to head
 void  LinkedList::addFront(int newitem){
@@ -58,7 +57,7 @@ void  LinkedList::addFront(int newitem){
 
     head = current_head;
     head->setNextNode(previous_head);
-};
+}
 
 // create a new node with info, traverse through nodes, assign this node as the next node to that node with a nullptr
 void  LinkedList::addEnd(int newitem){
@@ -81,7 +80,7 @@ void  LinkedList::addEnd(int newitem){
             current_node = current_node->getNextNode();
         }
     }
-};
+}
 
 // create new item node, iterate through nodeset until nullptr, and increment counter, make next node the new nodes next node, make new node next node of current node
 void  LinkedList::addAtPosition(int position, int newitem){
@@ -100,12 +99,12 @@ void  LinkedList::addAtPosition(int position, int newitem){
         current_node = current_node->getNextNode();
         counter++;
     }
-};
+}
 
 // get ptr to next node, delete head, make head variable the ptr ot the next node
 void  LinkedList::deleteFront(){
     head = head->getNextNode(); // overwriting the current head with the next node
-};
+}
 
 // iterate untill nullptr, delete node
 void  LinkedList::deleteEnd(){
@@ -120,7 +119,7 @@ void  LinkedList::deleteEnd(){
             current_node = current_node->getNextNode();
         }
     }
-};
+}
 
 // iterate till nullptr, increment counter, check if counter is position, save next node ptr, delete current node, make previous node next ptr 
 void  LinkedList::deleteAtPosition(int position){
@@ -138,7 +137,7 @@ void  LinkedList::deleteAtPosition(int position){
             counter++;
         }
     }
-};
+}
 
 // iterate till nullptr check current node, return whatever they want for whatever they need
 int  LinkedList::search(int item){
@@ -156,7 +155,7 @@ int  LinkedList::search(int item){
         counter++;
     }
     return 0;
-};
+}
 
 // iterate untill nullptr, increment counter, return node->getData() when counter = position
 int  LinkedList::getItem(int position){
@@ -176,7 +175,7 @@ int  LinkedList::getItem(int position){
         }
     }
     return 0;
-};
+}
 
 void  LinkedList::printItems(){
     Node *previous_node = head;
@@ -185,4 +184,4 @@ void  LinkedList::printItems(){
         previous_node = previous_node->getNextNode();
     }
     std::cout << previous_node->getData();
-};
+}
