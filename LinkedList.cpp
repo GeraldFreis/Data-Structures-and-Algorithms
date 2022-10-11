@@ -1,6 +1,7 @@
 #include <iostream>
 #include "LinkedList.h"
 #include "Node.h"
+#include <limits>
 
 LinkedList::LinkedList(){
     head = nullptr;
@@ -179,7 +180,8 @@ int  LinkedList::getItem(int position){
             counter++; 
         }
     }
-    return 0;
+    std::cout << std::numeric_limits < int >::max();
+    return std::numeric_limits < int >::max();
 }
 
 void  LinkedList::printItems(){
