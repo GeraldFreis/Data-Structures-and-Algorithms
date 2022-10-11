@@ -24,6 +24,22 @@ LinkedList::LinkedList(int size){
 
 };
 
+LinkedList::LinkedList(int *array, int size){
+    head = new Node(); head->setData(array[0]);
+    Node *previous_node = head;
+    
+    for(int i = 1; i < size; i++){
+        Node *newnode = new Node;
+        newnode->setData(array[i]);
+        previous_node->setNextNode(newnode);
+        previous_node = newnode;
+
+        if(i == size-1){
+            newnode->setNextNode(nullptr);
+        }
+    }
+}
+
 LinkedList::~LinkedList(){
     Node *previous_node = head;
 
