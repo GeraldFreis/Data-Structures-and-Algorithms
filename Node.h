@@ -7,9 +7,9 @@ class Node {
         int data;
     
     public:
-        Node(Node *next_node, int _data);
+        // Node(Node *next_node, int _data);
         Node();
-        
+
         Node *getNextNode();
         int getData();
 

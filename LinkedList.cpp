@@ -94,14 +94,14 @@ void  LinkedList::deleteFront(){
 }
 
 // iterate untill nullptr, delete node
-void  LinkedList::deleteEnd(){
+void LinkedList::deleteEnd(){
     bool sentinel_value = true;
     Node *current_node = head;
 
     while(sentinel_value == true){
         if(current_node->getNextNode() == nullptr){
             delete current_node;
-            sentinel_value = false;
+            return;
         } else {
             current_node = current_node->getNextNode();
         }
@@ -148,7 +148,7 @@ int LinkedList::search(int item){
 }
 
 // iterate untill nullptr, increment counter, return node->getData() when counter = position
-int  LinkedList::getItem(int position){
+int LinkedList::getItem(int position){
     int counter = 1; 
     Node *current_node = head;
 
@@ -168,8 +168,9 @@ int  LinkedList::getItem(int position){
     return std::numeric_limits < int >::max();
 }
 
-void  LinkedList::printItems(){
+void LinkedList::printItems(){
     if(head == nullptr){return;}
+
     Node *previous_node = head;
     while(previous_node->getNextNode() != nullptr){
         std::cout << previous_node->getData() <<  " ";

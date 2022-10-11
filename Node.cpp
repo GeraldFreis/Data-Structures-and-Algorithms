@@ -1,9 +1,9 @@
 #include "Node.h"
 
-Node::Node(Node *_nextnode, int _data){
-    nextnode = _nextnode;
-    data = _data;
-};
+// Node::Node(Node *_nextnode, int _data){
+//     nextnode = _nextnode;
+//     data = _data;
+// };
 
 Node::Node(){
     nextnode = nullptr;
