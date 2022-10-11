@@ -185,6 +185,7 @@ int  LinkedList::getItem(int position){
 }
 
 void  LinkedList::printItems(){
+    if(head == nullptr){return;}
     Node *previous_node = head;
     while(previous_node->getNextNode() != nullptr){
         std::cout << previous_node->getData() <<  " ";
