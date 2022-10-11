@@ -52,11 +52,11 @@ int main(){
     } else if(command_string == "DE"){
         list->deleteEnd();
     } else if(command_string == "DP"){
-        list->deleteAtPosition(param1);
+        list->deletePosition(param1);
     } else if(command_string == "GI"){
         list->getItem(param1);
     }
-    
+
     list->printItems();
     return 0;
 }
