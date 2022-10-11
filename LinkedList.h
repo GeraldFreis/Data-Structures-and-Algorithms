@@ -8,7 +8,6 @@ class LinkedList {
     
     public:
         LinkedList();
-        LinkedList(int size);
         LinkedList(int *array, int size);
         ~LinkedList();
 

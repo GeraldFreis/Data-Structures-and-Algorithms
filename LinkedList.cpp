@@ -7,22 +7,6 @@ LinkedList::LinkedList(){
     head = nullptr;
 }
 
-LinkedList::LinkedList(int size){
-    head = new Node; head->setData(0);
-    Node *previous_node;
-    previous_node = head;
-
-    for(int i = 0; i < size; i++){
-        Node *newnode = new Node;
-        newnode->setData(i);
-        previous_node->setNextNode(newnode);
-        previous_node = newnode;
-        if(i == size-1){ // setting the last node as a nullptr
-            newnode->setNextNode(nullptr);
-        }
-    }
-
-}
 
 LinkedList::LinkedList(int *array, int size){
     head = new Node; head->setData(array[0]);
