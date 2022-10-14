@@ -21,12 +21,19 @@ int main(){
             if(raw_input_string[i+1] != ' ' && raw_input_string[i+1] <= 57){
                 std::string newstring; 
                 if(raw_input_string[i] == '-'){
-                    if(raw_input_string[i+2]!= ' ' && raw_input_string[i+2]<=57){
+                    if(raw_input_string[i+2] != ' ' && raw_input_string[i+2] <= 57){
                         newstring += raw_input_string[i];
                         newstring += raw_input_string[i+1];
                         newstring += raw_input_string[i+2];
+                        std::cout << newstring << "\n";
                         given_array[counter] = std::stoi(newstring);
-                        counter+=3; i+=3;
+                        counter++; i+=3;
+                    } else if(raw_input_string[i+2] == ' '){
+                         newstring += raw_input_string[i];
+                        newstring += raw_input_string[i+1];
+                        std::cout << newstring << "\n";
+                        given_array[counter] = std::stoi(newstring);
+                        counter++; i+=2;
                     } 
                 }
                 else{
