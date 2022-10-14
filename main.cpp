@@ -26,7 +26,7 @@ int main(){
                         newstring += raw_input_string[i+1];
                         newstring += raw_input_string[i+2];
                         given_array[counter] = std::stoi(newstring);
-                        counter++; i++; counter++; i++;
+                        counter+=3; i+=3;
                     } 
                 }
                 else{
