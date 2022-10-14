@@ -35,7 +35,7 @@ LinkedList::~LinkedList(){
 }
 
 // create a new node with the info, create capacity for head, make new node head, make it point to head
-void  LinkedList::addFront(int newitem){
+void LinkedList::addFront(int newitem){
     Node *previous_head = head;
     Node *current_head = new Node;
     current_head->setData(newitem);
@@ -45,7 +45,7 @@ void  LinkedList::addFront(int newitem){
 }
 
 // create a new node with info, traverse through nodes, assign this node as the next node to that node with a nullptr
-void  LinkedList::addEnd(int newitem){
+void LinkedList::addEnd(int newitem){
     bool sentinel_value = true;
     Node *current_node = head;
 
@@ -89,7 +89,7 @@ void LinkedList::addAtPosition(int position, int newitem){
 }
 
 // get ptr to next node, delete head, make head variable the ptr ot the next node
-void  LinkedList::deleteFront(){
+void LinkedList::deleteFront(){
     head = head->getNext(); // overwriting the current head with the next node
 }
 
@@ -109,7 +109,7 @@ void LinkedList::deleteEnd(){
 }
 
 // iterate till nullptr, increment counter, check if counter is position, save next node ptr, delete current node, make previous node next ptr 
-void  LinkedList::deletePosition(int position){
+void LinkedList::deletePosition(int position){
     if(position < 1){std::cout << "outside range";}
     Node *current_node = head; 
     int counter = 1;
@@ -143,6 +143,7 @@ int LinkedList::search(int item){
         current_node = current_node->getNext();
         counter++;
     }
+
     if(current_node->getData() == item){return counter;}
     return 0;
 }
@@ -176,5 +177,5 @@ void LinkedList::printItems(){
         std::cout << previous_node->getData() <<  " ";
         previous_node = previous_node->getNext();
     }
-    std::cout << previous_node->getData();
+    std::cout << previous_node->getData(); // because the last item is not read out otherwise
 }

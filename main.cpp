@@ -15,18 +15,28 @@ int main(){
         command_string += "S";
     }
 
-
-
     for(int i = 0; i < raw_input_string.size()-7; i++){
         if(raw_input_string[i] == ' '){continue;}
         else {
-            if(raw_input_string[i+1] != ' ' && raw_input_string[i+1] <= 57){ 
+            if(raw_input_string[i+1] != ' ' && raw_input_string[i+1] <= 57){
                 std::string newstring; 
-                newstring += raw_input_string[i];
-                newstring += raw_input_string[i+1];
-                // std::cout << newstring << "\n";
-                given_array[counter] = std::stoi(newstring); counter++;
-                i++;
+                if(raw_input_string[i] == '-'){
+                    if(raw_input_string[i+2]!= ' ' && raw_input_string[i+2]<=57){
+                        newstring += raw_input_string[i];
+                        newstring += raw_input_string[i+1];
+                        newstring += raw_input_string[i+2];
+                        given_array[counter] = std::stoi(newstring);
+                        counter++; i++; counter++; i++;
+                    } 
+                }
+                else{
+                    newstring += raw_input_string[i];
+                    newstring += raw_input_string[i+1];
+                    // std::cout << newstring << "\n";
+                    given_array[counter] = std::stoi(newstring); 
+                    counter++;
+                    i++;
+                }
             }
             else if(raw_input_string[i+1] == ' '){
                 // std::cout << raw_input_string[i] << "\n";
