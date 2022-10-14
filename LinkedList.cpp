@@ -114,7 +114,7 @@ void LinkedList::deletePosition(int position){
     if(position < 1){std::cout << "outside range";}
     Node *current_node = head; 
     int counter = 1;
-
+    if(counter == 1){deleteFront(); return;}
     while(current_node->getNext() != nullptr){
         if(counter == position-1){
             Node *ahead_node = current_node->getNext()->getNext();
