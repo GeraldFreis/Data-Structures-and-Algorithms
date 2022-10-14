@@ -25,7 +25,7 @@ int main(){
                         newstring += raw_input_string[i];
                         newstring += raw_input_string[i+1];
                         newstring += raw_input_string[i+2];
-                        std::cout << newstring << "\n";
+                        // std::cout << newstring << "\n";
                         given_array[counter] = std::stoi(newstring);
                         counter++; i+=3;
                     } else if(raw_input_string[i+2] == ' '){

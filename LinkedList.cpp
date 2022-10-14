@@ -99,8 +99,9 @@ void LinkedList::deleteEnd(){
     Node *current_node = head;
 
     while(sentinel_value == true){
-        if(current_node->getNext() == nullptr){
-            delete current_node;
+        if(current_node->getNext()->getNext() == nullptr){
+            delete current_node->getNext();
+            current_node->setNext(nullptr);
             return;
         } else {
             current_node = current_node->getNext();
