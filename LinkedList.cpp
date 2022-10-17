@@ -153,16 +153,16 @@ int LinkedList::getItem(int position){
     Node *current_node = head;
 
     while(current_node != nullptr){
-        if(counter == position-1){
+        if(counter == position){
             // std::cout << "here" << "\n";
             std::cout << current_node->getData() << " ";
             return current_node->getData();
         }
-        else {
+        
             // std::cout << counter  << "\n";
-            current_node = current_node->getNext();
-            counter++; 
-        }
+        current_node = current_node->getNext();
+        counter++; 
+    
     }
     std::cout << std::numeric_limits < int >::max() << " ";
     return std::numeric_limits < int >::max();
