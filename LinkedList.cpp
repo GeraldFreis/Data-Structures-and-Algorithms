@@ -110,11 +110,11 @@ void LinkedList::deleteEnd(){
 
 // iterate till nullptr, increment counter, check if counter is position, save next node ptr, delete current node, make previous node next ptr 
 void LinkedList::deletePosition(int position){
-    if(position < 1){std::cout << "outside range";}
+    if(position < 1){std::cout << "outside range"; return;}
     Node *current_node = head; 
     int counter = 1;
     if(position == 1){deleteFront(); return;}
-    while(current_node->getNext() != nullptr){
+    while(current_node != nullptr){
         if(counter == position-1){
             Node *ahead_node = current_node->getNext()->getNext();
             current_node->setNext(ahead_node);
