@@ -57,8 +57,7 @@ void LinkedList::addEnd(int newitem){
             new_node->setNext(nullptr);
 
             current_node->setNext(new_node);
-            // std::cout << new_node->getData() << "\n";
-            sentinel_value = false;
+            return;
         }
 
         else {
@@ -74,7 +73,7 @@ void LinkedList::addAtPosition(int position, int newitem){
     int counter = 1;
     Node *current_node = head;
 
-    while(current_node->getNext() != nullptr){
+    while(current_node != nullptr){
         if(counter == position-1){
             Node *new_node = new Node;
             new_node->setData(newitem);  
