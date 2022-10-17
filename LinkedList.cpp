@@ -166,7 +166,7 @@ int LinkedList::getItem(int position){
             counter++; 
         }
     }
-    std::cout << std::numeric_limits < int >::max();
+    std::cout << std::numeric_limits < int >::max() << " ";
     return std::numeric_limits < int >::max();
 }
 
