@@ -138,7 +138,7 @@ int LinkedList::search(int item){
         if(current_node->getData() == item){
             position = counter; 
             std::cout << position << " ";
-            return position;
+            return position-1;
         }
         current_node = current_node->getNext();
         counter++;
