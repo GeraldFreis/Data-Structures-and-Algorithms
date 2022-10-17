@@ -133,7 +133,7 @@ int LinkedList::search(int item){
     Node *current_node = head;
     int position = 0; int counter = 1;
 
-    while(current_node->getNext() != nullptr){
+    while(current_node != nullptr){
 
         if(current_node->getData() == item){
             position = counter; 
@@ -144,7 +144,6 @@ int LinkedList::search(int item){
         counter++;
     }
 
-    if(current_node->getData() == item){return counter;}
     return 0;
 }
 
