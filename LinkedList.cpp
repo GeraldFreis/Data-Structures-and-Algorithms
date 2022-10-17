@@ -115,7 +115,7 @@ void LinkedList::deletePosition(int position){
     int counter = 1;
     if(position == 1){deleteFront(); return;}
     while(current_node != nullptr){
-        if(counter == position-1){
+        if(counter == position){
             Node *ahead_node = current_node->getNext()->getNext();
             current_node->setNext(ahead_node);
             return;
