@@ -1,6 +1,7 @@
 #ifndef POLISH_H
 #define POLISH_H
 #include "Node.h"
+
 class Polish {
     private:
         Node *head_node;

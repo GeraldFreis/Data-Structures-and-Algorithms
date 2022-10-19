@@ -1,4 +1,5 @@
 #include "Polish.h"
+#include <iostream>
 
 Polish::Polish(){
     head_node = nullptr;
@@ -24,22 +25,65 @@ Polish::Polish(int *array, int size){
 
 // multiplies the first two elements in the deque, deletes the second one and makes the first one equal to their sum
 void Polish::multiply(){
-    
+    int data_1, data_2;
+    data_1 = head_node->getdata(); data_2=head_node->getnext()->getdata();
+    int result = data_1 * data_2;
+
+    Node *new_head = new Node;
+    new_head = head_node->getnext(); new_head->setdata(result);
+    new_head->setprev(nullptr);
+    head_node = new_head;
 }
+
 // divides the first two elements in the list, deletes the second one and makes the first one equal to their product
 void Polish::divide(){
+    int data_1, data_2;
+    data_1 = head_node->getdata(); data_2=head_node->getnext()->getdata();
+    int result = data_1 / data_2;
 
+    Node *new_head = new Node;
+    new_head = head_node->getnext(); new_head->setdata(result);
+    new_head->setprev(nullptr);
+    head_node = new_head;
 }
 // adds the first to the second
 void Polish::add(){
+    int data_1, data_2;
+    data_1 = head_node->getdata(); data_2=head_node->getnext()->getdata();
+    int result = data_1 + data_2;
 
+    Node *new_head = new Node;
+    new_head = head_node->getnext(); new_head->setdata(result);
+    new_head->setprev(nullptr);
+    head_node = new_head;
 }
 // subtracts the second from the first, deletes the second, makes the product the first
 void Polish::subtract(){
+    int data_1, data_2;
+    data_1 = head_node->getdata(); data_2=head_node->getnext()->getdata();
+    int result = data_1 - data_2;
 
+    Node *new_head = new Node;
+    new_head = head_node->getnext(); new_head->setdata(result);
+    new_head->setprev(nullptr);
+    head_node = new_head;       
+}
+
+void Polish::printlist(){
+    Node *current_node = head_node;
+    while(current_node != nullptr){
+        std::cout << current_node->getdata();
+        current_node = current_node->getnext();
+        if(current_node != nullptr){std::cout << " ";}
+        else{std::cout <<  "\n"; }
+    }
 }
 
 Polish::~Polish(){
-
+    while(head_node != nullptr){
+        Node *new_node = head_node->getnext();
+        delete head_node;
+        head_node = new_node;
+    }
 }
 
