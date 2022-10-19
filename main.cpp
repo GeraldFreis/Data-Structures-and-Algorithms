@@ -8,5 +8,7 @@ int main(){
     std::string raw_input_string;
     std::getline(std::cin, raw_input_string);
 
-    std::cout << raw_input_string;
+    // std::cout << raw_input_string;
+
+    
 }
