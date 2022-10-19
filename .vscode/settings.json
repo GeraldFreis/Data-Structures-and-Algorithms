@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "__split_buffer": "cpp",
+        "compare": "cpp",
+        "ios": "cpp",
+        "istream": "cpp",
+        "ostream": "cpp",
+        "type_traits": "cpp",
+        "vector": "cpp",
+        "*.tcc": "cpp",
+        "memory_resource": "cpp",
+        "limits": "cpp",
+        "memory": "cpp"
+    }
+}
