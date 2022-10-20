@@ -23,22 +23,25 @@ int *reading_array(std::string raw_string){
 
         }
     }
-    int new_counter = 0;
-    for(int i = raw_string.size()-1; i >= 0 ;i--){
-        if(new_counter == 0){
-            if(raw_string.at(i) >= 48 && raw_string.at(i) <= 59){
-                int c = 0;
-                std::string number;
-                while((raw_string.at(i-c) != ' ') && (i-c > 0)){
-                    number += raw_string.at(i-c); c++;
-                }
+    if(raw_string.at(raw_string.size()-3) == ' '){array[counter] = raw_string.at(raw_string.size()-2)-'0';}
+    else{
+        int new_counter = 0;
+        for(int i = raw_string.size()-1; i >= 0 ;i--){
+            if(new_counter == 0){
+                if(raw_string.at(i) >= 48 && raw_string.at(i) <= 59){
+                    int c = 0;
+                    std::string number;
+                    while((raw_string.at(i-c) != ' ') && (i-c > 0)){
+                        number += raw_string.at(i-c); c++;
+                    }
 
-                if(number.size() > 0){
-                    std::string new_number;
-                    for(int i = number.size()-1; i >= 0; i--){new_number += number.at(i);}
-                    array[counter] = std::stoi(new_number); counter += 1;
-                    // std::cout << array[counter-1] << "\n";
-                    new_counter++;
+                    if(number.size() > 0){
+                        std::string new_number;
+                        for(int i = number.size()-1; i >= 0; i--){new_number += number.at(i);}
+                        array[counter] = std::stoi(new_number); counter += 1;
+                        // std::cout << array[counter-1] << "\n";
+                        new_counter++;
+                    }
                 }
             }
         }
@@ -47,6 +50,7 @@ int *reading_array(std::string raw_string){
     int *clean_array = new int[counter];
     for(int i  = 0; i < counter; i++){
         clean_array[i] = array[i];
+    
         // std::cout << clean_array[i] << "\n";
     }
     return clean_array;
@@ -55,8 +59,8 @@ int *reading_array(std::string raw_string){
 int size_finder(std::string raw_string){
     int counter = 0;
 
-    for(int i =0; i < raw_string.size()-1; i++){
-        if(raw_string.at(i) >= 48 && raw_string.at(i) <=59){
+    for(int i =0; i < raw_string.size(); i++){
+        if(raw_string.at(i) >= 48 && raw_string.at(i) <= 59){
             int c = 0;
 
             while(raw_string.at(i+c) != ' ' && ((i+c)<raw_string.size()-1)){
@@ -72,7 +76,31 @@ int size_finder(std::string raw_string){
 
 // function to derive the order of the operators given
 char *commands(std::string raw_input){
-    
+    char *original_command_array = new char[100]; // giving space for 100 commands
+    int counter=0;
+
+    for(int i = raw_input.size()-1; i >= 0; i--){
+        if(raw_input.at(i) == '*' || raw_input.at(i) == '+' || raw_input.at(i) == '-' || raw_input.at(i) == '\\'){
+            original_command_array[counter] = raw_input.at(i); counter++;
+        }   
+    }
+
+    char *new_array = new char[counter];
+    for(int i = 0; i < counter; i++){new_array[i] = original_command_array[i];}
+    delete [] original_command_array;
+    return new_array;
+}
+
+int commands_amount(std::string raw_input){
+    char *original_command_array = new char[100]; // giving space for 100 commands
+    int counter=0;
+
+    for(int i = raw_input.size()-1; i >= 0; i--){
+        if(raw_input.at(i) == '*' || raw_input.at(i) == '+' || raw_input.at(i) == '-' || raw_input.at(i) == '\\'){
+            counter++;
+        }   
+    }
+    return counter;
 }
 
 int main(){
@@ -83,6 +111,13 @@ int main(){
     int *array = reading_array(raw_input_string);
 
     Polish *pol = new Polish(array, size_finder(raw_input_string));
+    char *command_array = commands(raw_input_string);
+    for(int i = 0; i < commands_amount(raw_input_string); i++){
+        if(command_array[i] == '*'){pol->multiply();}
+        else if(command_array[i] == '\\'){pol->divide();}
+        else if(command_array[i] == '-'){pol->subtract();}
+        else if(command_array[i] == '+'){pol->add();}
+        // pol->printlist();
+    }
     pol->printlist();
-
 }
