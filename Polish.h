@@ -1,10 +1,16 @@
 #ifndef POLISH_H
 #define POLISH_H
+
+#include <string>
+
 #include "Node.h"
 
 class Polish {
     private:
         Node *head_node;
+        std::string equation;
+        int recent_output;
+        
     public:
         Polish();
         Polish(int *array, int size);
@@ -18,6 +24,8 @@ class Polish {
         void subtract();
 
         void printlist();
+
+        void printEquation();
         ~Polish();
 };
 

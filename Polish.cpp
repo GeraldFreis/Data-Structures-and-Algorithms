@@ -29,6 +29,16 @@ void Polish::multiply(){
     data_1 = head_node->getdata(); data_2=head_node->getnext()->getdata();
     int result = data_1 * data_2;
 
+    if(equation.size() == 0){
+        equation += "(";
+        equation += data_1; equation += " * "; equation += data_2; equation += ")";
+    }
+    else {
+        equation += " * ";
+        equation += std::to_string(data_2);
+    }
+    recent_output = result;
+
     Node *new_head = new Node;
     new_head = head_node->getnext(); new_head->setdata(result);
     new_head->setprev(nullptr);
@@ -62,6 +72,14 @@ void Polish::subtract(){
     int data_1, data_2;
     data_1 = head_node->getdata(); data_2=head_node->getnext()->getdata();
     int result = data_1 - data_2;
+    if(equation.size() == 0){
+        equation += "( ";
+        equation += std::to_string(data_1);
+        equation += " - ";
+        equation += std::to_string(data_2);
+        equation += " )";
+    }
+    recent_output = result;
 
     Node *new_head = new Node;
     new_head = head_node->getnext(); new_head->setdata(result);
@@ -71,13 +89,17 @@ void Polish::subtract(){
 
 void Polish::printlist(){
     Node *current_node = head_node;
-    
+
     while(current_node != nullptr){
         std::cout << current_node->getdata();
         current_node = current_node->getnext();
         if(current_node != nullptr){std::cout << " ";}
         else{std::cout <<  "\n"; }
     }
+}
+
+void Polish::printEquation(){
+    std::cout << equation << " = " << recent_output;
 }
 
 Polish::~Polish(){

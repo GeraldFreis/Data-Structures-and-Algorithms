@@ -124,5 +124,5 @@ int main(){
         else if(command_array[i] == '+'){pol->add();}
         // pol->printlist();
     }
-    pol->printlist();
+    pol->printEquation();
 }
