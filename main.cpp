@@ -10,7 +10,7 @@ int *reading_array(std::string raw_string){
 
     for(int i = 0; i < raw_string.size()-1; i++){
 
-        if(raw_string.at(i) >= 48 && raw_string.at(i) <= 59){
+        if(raw_string.at(i) > 47 && raw_string.at(i) < 60){
             int new_counter = 0; // keeping track of where we are in the array
             std::string number;
 
@@ -29,7 +29,7 @@ int *reading_array(std::string raw_string){
         int new_counter = 0;
         for(int i = raw_string.size()-1; i >= 0 ;i--){
             if(new_counter == 0){
-                if(raw_string.at(i) >= 48 && raw_string.at(i) <= 59){
+                if(raw_string.at(i) > 47 && raw_string.at(i) < 60){
                     int c = 0;
                     std::string number;
                     while((raw_string.at(i-c) != ' ') && (i-c >= 0)){
@@ -81,7 +81,7 @@ char *commands(std::string raw_input){
     int counter=0;
 
     for(int i = raw_input.size()-1; i >= 0; i--){
-        if(raw_input.at(i) == '*' || raw_input.at(i) == '+' || raw_input.at(i) == '-' || raw_input.at(i) == '\\'){
+        if(raw_input.at(i) == '*' || raw_input.at(i) == '+' || raw_input.at(i) == '-' || raw_input.at(i) == '/'){
             original_command_array[counter] = raw_input.at(i); counter++;
         }   
     }
@@ -97,7 +97,7 @@ int commands_amount(std::string raw_input){
     int counter=0;
 
     for(int i = raw_input.size()-1; i >= 0; i--){
-        if(raw_input.at(i) == '*' || raw_input.at(i) == '+' || raw_input.at(i) == '-' || raw_input.at(i) == '\\'){
+        if(raw_input.at(i) == '*' || raw_input.at(i) == '+' || raw_input.at(i) == '-' || raw_input.at(i) == '/'){
             counter++;
         }   
     }
@@ -114,13 +114,12 @@ int main(){
     Polish *pol = new Polish(array, size_finder(raw_input_string));
 
     char *command_array = commands(raw_input_string);
-
     if(commands_amount(raw_input_string) > size_finder(raw_input_string)){std::cout << "Error"; return 0;}
     if(commands_amount(raw_input_string) < size_finder(raw_input_string)-1){std::cout << "Error"; return 0;}
-    // std::cout << size_finder(raw_input_string) << "\n";
+    
     for(int i = 0; i < commands_amount(raw_input_string); i++){
         if(command_array[i] == '*'){pol->multiply();}
-        else if(command_array[i] == '\\'){pol->divide();}
+        else if(command_array[i] == '/'){pol->divide();}
         else if(command_array[i] == '-'){pol->subtract();}
         else if(command_array[i] == '+'){pol->add();}
         // pol->printlist();
