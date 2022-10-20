@@ -109,9 +109,11 @@ int main(){
 
     // std::cout << raw_input_string;
     int *array = reading_array(raw_input_string);
-
+    if(size_finder(raw_input_string)<2){std::cout << "Error"; return;}
     Polish *pol = new Polish(array, size_finder(raw_input_string));
     char *command_array = commands(raw_input_string);
+    if(commands_amount(raw_input_string) > size_finder(raw_input_string)){std::cout << "Error"; return;}
+    if(commands_amount(raw_input_string) < size_finder(raw_input_string)-1){std::cout << "Error"; return;}
     for(int i = 0; i < commands_amount(raw_input_string); i++){
         if(command_array[i] == '*'){pol->multiply();}
         else if(command_array[i] == '\\'){pol->divide();}
