@@ -24,7 +24,7 @@ int *reading_array(std::string raw_string){
 
         }
     }
-    if(raw_string.at(raw_string.size()-3) == ' '){array[counter] = raw_string.at(raw_string.size()-2)-'0';}
+    if(raw_string.at(raw_string.size()-2) == ' '){array[counter] = raw_string.at(raw_string.size()-1)-48; counter++;}
     else{
         int new_counter = 0;
         for(int i = raw_string.size()-1; i >= 0 ;i--){
@@ -32,7 +32,7 @@ int *reading_array(std::string raw_string){
                 if(raw_string.at(i) >= 48 && raw_string.at(i) <= 59){
                     int c = 0;
                     std::string number;
-                    while((raw_string.at(i-c) != ' ') && (i-c > 0)){
+                    while((raw_string.at(i-c) != ' ') && (i-c >= 0)){
                         number += raw_string.at(i-c); c++;
                     }
 
@@ -117,7 +117,7 @@ int main(){
 
     if(commands_amount(raw_input_string) > size_finder(raw_input_string)){std::cout << "Error"; return 0;}
     if(commands_amount(raw_input_string) < size_finder(raw_input_string)-1){std::cout << "Error"; return 0;}
-
+    // std::cout << size_finder(raw_input_string) << "\n";
     for(int i = 0; i < commands_amount(raw_input_string); i++){
         if(command_array[i] == '*'){pol->multiply();}
         else if(command_array[i] == '\\'){pol->divide();}

@@ -8,7 +8,6 @@
 class Polish {
     private:
         Node *head_node;
-        std::string equation;
         int recent_output;
 
     public:

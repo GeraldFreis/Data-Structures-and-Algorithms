@@ -29,16 +29,7 @@ void Polish::multiply(){
     data_1 = head_node->getdata(); data_2=head_node->getnext()->getdata();
     int result = data_1 * data_2;
 
-    if(equation.size() == 0){
-        equation += "(";
-        equation += data_1; equation += " * "; equation += data_2; equation += ")";
-    }
-    else {
-        equation += " * ";
-        equation += std::to_string(data_2);
-    }
     recent_output = result;
-
     Node *new_head = new Node;
     new_head = head_node->getnext(); new_head->setdata(result);
     new_head->setprev(nullptr);
@@ -50,7 +41,7 @@ void Polish::divide(){
     int data_1, data_2;
     data_1 = head_node->getdata(); data_2=head_node->getnext()->getdata();
     int result = data_1 / data_2;
-
+    recent_output = result;
     Node *new_head = new Node;
     new_head = head_node->getnext(); new_head->setdata(result);
     new_head->setprev(nullptr);
@@ -61,6 +52,7 @@ void Polish::add(){
     int data_1, data_2;
     data_1 = head_node->getdata(); data_2=head_node->getnext()->getdata();
     int result = data_1 + data_2;
+    recent_output = result;
 
     Node *new_head = new Node;
     new_head = head_node->getnext(); new_head->setdata(result);
@@ -72,15 +64,7 @@ void Polish::subtract(){
     int data_1, data_2;
     data_1 = head_node->getdata(); data_2=head_node->getnext()->getdata();
     int result = data_1 - data_2;
-    if(equation.size() == 0){
-        equation += "( ";
-        equation += std::to_string(data_1);
-        equation += " - ";
-        equation += std::to_string(data_2);
-        equation += " )";
-    }
     recent_output = result;
-
     Node *new_head = new Node;
     new_head = head_node->getnext(); new_head->setdata(result);
     new_head->setprev(nullptr);
