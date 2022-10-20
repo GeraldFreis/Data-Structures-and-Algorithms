@@ -9,18 +9,10 @@ void InterpretingEquation::calculate_equation(char *command_array, int command_a
         equation += command_array[0]; equation += " ";
         equation += std::to_string(numbers[1]);
     } else {
-        if(command_amount == 2){
-            equation += "("; equation += std::to_string(numbers[0]); equation += " ";
+        if(command_amount >= 2){
+            equation += std::to_string(numbers[0]); equation += " ";
             equation += command_array[0]; equation += " ";
-            equation += std::to_string(numbers[1]); equation += ") "; 
-
-            equation += command_array[1]; equation += " ";
-            equation += std::to_string(numbers[2]);
-        }
-        else if(command_amount >= 3){
-            equation += "("; equation += std::to_string(numbers[0]); equation += " ";
-            equation += command_array[0]; equation += " ";
-            equation += std::to_string(numbers[1]); equation += ") ";
+            equation += std::to_string(numbers[1]); ;
 
             for(int i = 2; i <= command_amount; i++){
                 if(command_array[i-1] == '*' || command_array[i-1] == '/'){
