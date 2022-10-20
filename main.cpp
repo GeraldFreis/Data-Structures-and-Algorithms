@@ -2,6 +2,7 @@
 #include <string>
 
 #include "Polish.h"
+#include "InterpretingEquation.h"
 
 // dividing the string into the array
 int *reading_array(std::string raw_string){
@@ -124,5 +125,7 @@ int main(){
         else if(command_array[i] == '+'){pol->add();}
         // pol->printlist();
     }
+    InterpretingEquation EquationFinder; EquationFinder.calculate_equation(command_array, commands_amount(raw_input_string), array, size_finder(raw_input_string));
+    EquationFinder.print_equation();
     pol->printEquation();
 }

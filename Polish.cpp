@@ -99,7 +99,7 @@ void Polish::printlist(){
 }
 
 void Polish::printEquation(){
-    std::cout << equation << " = " << recent_output;
+    std::cout << " = " << recent_output;
 }
 
 Polish::~Polish(){

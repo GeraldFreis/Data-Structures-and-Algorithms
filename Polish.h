@@ -10,7 +10,7 @@ class Polish {
         Node *head_node;
         std::string equation;
         int recent_output;
-        
+
     public:
         Polish();
         Polish(int *array, int size);
