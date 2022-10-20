@@ -25,6 +25,7 @@ void InterpretingEquation::calculate_equation(char *command_array, int command_a
                     }
                     
                 }
+                if(equation.at(equation.size()-1)!=' '){equation += " ";}
                 equation += command_array[i-1];
                 equation += " ";
                 equation += std::to_string(numbers[i]); 
