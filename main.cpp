@@ -122,7 +122,6 @@ int main(){
         else if(command_array[i] == '/'){pol->divide();}
         else if(command_array[i] == '-'){pol->subtract();}
         else if(command_array[i] == '+'){pol->add();}
-        // pol->printlist();
     }
     InterpretingEquation EquationFinder; EquationFinder.calculate_equation(command_array, commands_amount(raw_input_string), array, size_finder(raw_input_string));
     EquationFinder.print_equation();

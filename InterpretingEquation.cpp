@@ -23,6 +23,16 @@ void InterpretingEquation::calculate_equation(char *command_array, int command_a
             equation += std::to_string(numbers[1]); equation += ") ";
 
             for(int i = 2; i <= command_amount; i++){
+                if(command_array[i-1] == '*' || command_array[i-1] == '/'){
+                    std::string newstring = "(";
+                    newstring += equation;
+                    equation = newstring;
+                    if(equation[equation.size()-1] == ' '){equation.at(equation.size()-1) = ')'; equation += " ";}
+                    else {
+                        equation += ") ";
+                    }
+                    
+                }
                 equation += command_array[i-1];
                 equation += " ";
                 equation += std::to_string(numbers[i]); 
