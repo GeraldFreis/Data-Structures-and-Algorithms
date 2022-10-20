@@ -70,6 +70,11 @@ int size_finder(std::string raw_string){
     return counter;
 }
 
+// function to derive the order of the operators given
+char *commands(std::string raw_input){
+    
+}
+
 int main(){
     std::string raw_input_string;
     std::getline(std::cin, raw_input_string);
