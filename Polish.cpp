@@ -71,6 +71,7 @@ void Polish::subtract(){
 
 void Polish::printlist(){
     Node *current_node = head_node;
+    
     while(current_node != nullptr){
         std::cout << current_node->getdata();
         current_node = current_node->getnext();
