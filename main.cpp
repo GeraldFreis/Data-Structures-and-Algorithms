@@ -7,11 +7,18 @@
 int main(){
     std::string raw_input_string;
     std::getline(std::cin, raw_input_string);
-    if(raw_input_string.size() <= 3){std::cout << "Error"; return 0;}
+
+    if(raw_input_string.size() <= 3){
+        if(raw_input_string.at(0) > 47 && raw_input_string.at(0) < 60){
+            std::cout << raw_input_string.at(0) << " = " << raw_input_string.at(0); return 0;
+        } else {
+            std::cout << "Error"; return 0;
+        }
+    }
     InterpretingEquation EquationFinder;
     // std::cout << raw_input_string;
     int *array = EquationFinder.reading_array(raw_input_string);
-    if(EquationFinder.size_finder(raw_input_string)<2){std::cout << "Error"; return 0;}
+    if(EquationFinder.size_finder(raw_input_string)<2){std::cout << array[0] << " = " << array[0]; return 0;}
     for(int i = 0; i < EquationFinder.size_finder(raw_input_string); i++){
         if(array[i] > 99 || array[i] <= 0){std::cout << "Error"; return 0;}
     }
