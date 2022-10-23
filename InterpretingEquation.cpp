@@ -76,6 +76,8 @@ int *InterpretingEquation::reading_array(std::string raw_string){
         }
     }
     if(raw_string.at(raw_string.size()-2) == ' '){array[counter] = raw_string.at(raw_string.size()-1)-48; counter++;}
+    else if(raw_string.at(raw_string.size()-3) == ' '){std::string num; num += raw_string.at(raw_string.size()-2); num += raw_string.at(raw_string.size()-1);
+    array[counter] = std::stoi(num); counter++;}
     else{
         int new_counter = 0;
         for(int i = raw_string.size()-1; i >= 0 ;i--){
@@ -136,7 +138,7 @@ char *InterpretingEquation::commands(std::string raw_input){
     //     }   
     // }
     for(int i = index_of_first_num(raw_input); i >= 0; i--){
-        if(raw_input.at(i)== '*' || raw_input.at(i) == '+' || raw_input.at(i) == '-' || raw_input.at(i) == '/'){
+        if(raw_input.at(i)== '*' || raw_input.at(i) == '+' || (raw_input.at(i) == '-' && i != raw_input.size()-1 && raw_input.at(i+1) == ' ') || raw_input.at(i) == '/'){
              original_command_array[counter] = raw_input.at(i); counter++;
          }
     }
