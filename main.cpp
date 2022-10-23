@@ -16,7 +16,8 @@ int main(){
     char *command_array = EquationFinder.commands(raw_input_string);
     if(EquationFinder.commands_amount(raw_input_string) > EquationFinder.size_finder(raw_input_string)){std::cout << "Error"; return 0;}
     if(EquationFinder.commands_amount(raw_input_string) < EquationFinder.size_finder(raw_input_string)-1){std::cout << "Error"; return 0;}
-    
+    if(EquationFinder.commands_amount(raw_input_string) == 0){std::cout << "Error"; return 0;}
+    if(EquationFinder.size_finder(raw_input_string) <= 1){std::cout << "Error"; return 0;}
     for(int i = 0; i < EquationFinder.commands_amount(raw_input_string); i++){
         if(command_array[i] == '*'){pol->multiply();}
         else if(command_array[i] == '/'){pol->divide();}
