@@ -55,7 +55,7 @@ int *InterpretingEquation::reading_array(std::string raw_string){
 
     for(int i = 0; i < raw_string.size()-1; i++){
 
-        if(raw_string.at(i) > 47 && raw_string.at(i) < 60){
+        if((raw_string.at(i) > 47 && raw_string.at(i) < 60)){
             int new_counter = 0; // keeping track of where we are in the array
             std::string number;
 
@@ -63,8 +63,14 @@ int *InterpretingEquation::reading_array(std::string raw_string){
                 number += raw_string.at(i+new_counter); new_counter++;
             }
             if(number.size() > 0){
-                array[counter] = std::stoi(number);
-                counter++; i+=number.size();
+                if(i != 0 && raw_string.at(i-1) != '-'){
+                    array[counter] = std::stoi(number);
+                    counter++; i+=number.size();
+                }else {
+                    std::string newnum = "-"; newnum += number;
+                    array[counter] = std::stoi(newnum);
+                    counter++; i+= number.size();
+                }
             }
 
         }
@@ -116,7 +122,6 @@ int InterpretingEquation::size_finder(std::string raw_string){
             i +=  c;
         }
     }
-
     return counter;
 }
 
@@ -135,7 +140,7 @@ char *InterpretingEquation::commands(std::string raw_input){
              original_command_array[counter] = raw_input.at(i); counter++;
          }
     }
-    for(int i = raw_input.size()-1; i > index_of_first_num(raw_input); i--){
+    for(int i = index_of_first_num(raw_input)+1; i < raw_input.size();i++){
         if(raw_input.at(i) == '*' || raw_input.at(i) == '+' || raw_input.at(i) == '-' || raw_input.at(i) == '/'){
             original_command_array[counter] = raw_input.at(i); counter++;
         }   
