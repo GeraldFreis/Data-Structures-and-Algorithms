@@ -13,7 +13,7 @@ int main(){
     int *array = EquationFinder.reading_array(raw_input_string);
     if(EquationFinder.size_finder(raw_input_string)<2){std::cout << "Error"; return 0;}
     for(int i = 0; i < EquationFinder.size_finder(raw_input_string); i++){
-        if(array[i] > 99 || array[i] < 0){std::cout << "Error"; return 0;}
+        if(array[i] > 99 || array[i] <= 0){std::cout << "Error"; return 0;}
     }
 
     Polish *pol = new Polish(array, EquationFinder.size_finder(raw_input_string));
